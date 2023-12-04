@@ -1,0 +1,9 @@
+{
+  "name": "uzini/streaming-app",
+  "autoload": {
+    "psr-4": {
+      "Streaming\\": "src/"
+    }
+  },
+  "require": {}
+}
