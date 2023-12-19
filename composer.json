@@ -5,7 +5,11 @@
       "Streaming\\": "src/"
     }
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
-    "guzzlehttp/guzzle": "^7.8"
+    "guzzlehttp/guzzle": "^7.8",
+    "daijie/aria2": "^1.1",
+    "aldobarr/qbittorrent-php": "^0.2.0@alpha"
   }
 }

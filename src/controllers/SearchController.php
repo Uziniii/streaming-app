@@ -1,0 +1,5 @@
+<?php
+namespace Streaming\Controllers;
+
+
+?>

@@ -1,61 +1,215 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+
+main {
+    width: 100%;
 }
 
-body {
-    background-color: #05151E;
+.banner {
+    background-image: url(../img/pexels-luis-quintero-2774556.jpg);
+    background-size: cover;
     width : 100%;
-    height : 100vh;
+    height: 48rem;
+    box-shadow: 0px -22px 30px 12px rgba(5,21,30,1) inset;
+-webkit-box-shadow: 0px -22px 30px 12px rgba(5,21,30,1) inset;
+-moz-box-shadow: 0px -22px 30px 12px rgba(5,21,30,1) inset;
     display: flex;
-    justify-content: center;
-}
-.container {
-    width : 90%;
-    height : 100vh;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
-header {
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between;   
-    align-items: center;
-    position: fixed;
-    width : 100vw;
-    height : 15vh;
-    color : white;
+.startBannerAnimation {
+    animation: fadingBanner 0.5s ease-in 0s 1 normal none;
 }
 
-.logo {
-    width: 7vw;
-    height : 5vh;
-    background-color: red;
+
+@keyframes fadingBanner {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
-.headerSearchContainer {
-    width: 15vw;
-    height: 5vh;
-    background-color: #0e0e0e50;
-    backdrop-filter: blur(50);
-    border-radius: 15px;
+
+.bannerContainer {
+    padding: 0 0 3rem 6rem;
+}
+.bannerMovieDesc {
+    color: white;
+    font-size: 1.2rem;
+}
+.bannerMovieTitle {
+    color: white;
+    font-size: 4.5rem;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+.movieCaroussel {
+    display: flex;
+    justify-content: space-around;
+    width: 97%;
+    margin: 0 auto;
+}
+.horizontalCard {
+    width: 20rem;
+    height: 13rem;
+    border-radius: 25px;
+    background-color: black;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    transition: ease-in-out 0.25s;  
+    backdrop-filter: opacity(70%);
+    user-select: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.horizontalCardTitle {
+    color: white;
+    padding: 1.5rem 1rem;
+    font-size: 1.5rem;
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+.horizontalCard:hover {
+    filter: grayscale(0);
+    transform: scale(1.07);
+    outline: white 3px solid;
+}
+.categoryMovies {
+    display: flex;
+    flex-direction: column;
+    width: 89%;
+    margin: 0 auto;
+    padding : 5rem 0;
+}
+.categoryTitleContainer {
     display: flex;
     align-items: center;
+    padding: 0 0 2rem 0;
+}
+.categoryTitle {
+    color: white;
+}
+.categoryTitleLogo {
+    width: 2.2rem;
+}
+.categoryCardContainer {
+    width: 100%;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 auto;
+    color: white;
 }
-
-.headerSearchBar {
-    background-color: #0e0e0e50;
-    backdrop-filter: blur(50);
-    border: none;
+.categoryMoviesCard {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.2rem;
+}
+.categoryMovieDate {
+    font-size: 1rem;
+}
+.categoryMovieImage {
+    background-color: blue;
+    width: 12rem;
+    height: 18rem;
+    border-radius: 15px;
+    margin: 0 0 1rem 0;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: 5%;
+    position: sticky;
+    background-color: #0a293c;
+}
+.previewBanner {
+    height: 70vh;
+    background-image: url(../img/pexels-luis-quintero-2774556.jpg);
+    background-size: cover;
+    width : 100%;
+    box-shadow: 0px -22px 30px 12px rgba(5,21,30,1) inset;
+-webkit-box-shadow: 0px -22px 30px 12px rgba(5,21,30,1) inset;
+-moz-box-shadow: 0px -22px 30px 12px rgba(5,21,30,1) inset;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.bannerCategory {
+    display: flex;
+    gap: 15px;
+    padding: 0 0 1rem 0;
+}
+.categoryName {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5rem;
+    width: 6rem;
+    height: 2.5rem;
+    border: white 1px solid;
+    border-radius: 10px;
+    color: white;
+    background-color: #FFFFFF20;
+    backdrop-filter: blur(2px);
+}
+.movieInformation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 0 2rem 0;
+}
+#playBtn {
     outline: none;
+    border: none;
+    background-color: #38A935;
+    backdrop-filter: none;
+    color: white;
+}
+.movieInfoCard {
+    width: 15vw;
+    height: 10vw;
+    border-radius: 25px;
+    background-color: #434D4F35;
+    backdrop-filter: blur(2px);
+}
+.cardName {
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    text-orientation: sideways-right;
+    color: #434D4F;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    height: 100%;
+    padding: 0 0 0 0.5rem;
+}
+.cardNameInfo {
     color: white;
 }
 
-.searchBarLogo {
-    background-image: url(magnifying-glass-48.png);
-    
-}
-
-
+.spinner-3 {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: 
+      radial-gradient(farthest-side,rgb(11, 176, 235) 94%,#0000) top/8px 8px no-repeat,
+      conic-gradient(#0000 30%,rgb(11, 176, 235));
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation: s3 1s infinite linear;
+  }
+  
+  @keyframes s3{ 
+    100%{transform: rotate(1turn)}
+  }

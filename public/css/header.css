@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Poppins:wght@200;300;400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #05151E;
+    width : 100%;
+    height : 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.headerContainer {
+    width : 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;   
+    align-items: center;
+    color : white;
+
+}
+header {
+    width: 100%;
+    height: 5rem; 
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in-out 0.25s;
+    position: fixed;
+    margin: 0 auto;
+    opacity: 100%;
+    
+}
+
+.logo {
+    width: 7vw;
+    height : 6vh;
+    background-color: red;
+}
+.headerSearchContainer {
+    width: 20vw;
+    height: 5vh;
+    background-color: #0e0e0e70;
+    backdrop-filter: blur(2px);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 25px -1px rgba(255,255,255,0.18);
+    -webkit-box-shadow: 0px 0px 25px -1px rgba(255,255,255,0.18);
+    -moz-box-shadow: 0px 0px 25px -1px rgba(255,255,255,0.18);
+}
+.SearchLoginContainer {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+}
+.headerSearchForm {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    justify-content: space-between;
+    width: 95%;
+}
+.headerSearchBar {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    resize: none;
+    width: 20rem;
+    font-size: 1.05rem;
+    padding: 0 0 0 1rem;
+}
+.headerSearchBar::placeholder {
+    color: white;
+}
+.headerSearchBarLogo {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    margin: 0 1rem 0 0 ;
+}
+.menuBurgerBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    height : 15vh;
+}
+.menuBurgerIcon {
+    width: 3.8rem;
+    height: 3.8rem;
+}
+.headerActive {
+    background-color: #05151E50;
+    backdrop-filter: blur(2px);
+    opacity: 100%;
+}
+
+.menuActive .headerContainer {
+    justify-content: space-between;
+    align-items: center;
+}
+.menuActive header {
+    width: 100vw;
+    background-color: transparent;
+    align-items: center;
+}
+.menuBurgerBtn.menuBurgerActive{
+    background-color: #05151E;
+    box-shadow: 0px -110px 87px -33px rgba(5,21,30,0.85) inset;
+-webkit-box-shadow: 0px -110px 87px -33px rgba(5,21,30,0.85) inset;
+-moz-box-shadow: 0px -110px 87px -33px rgba(5,21,30,0.85) inset;
+}
+.menuBurgerIcon.menuBurgerActive{
+    background-color: #05151E;
+    box-shadow: 0px -110px 87px -33px rgba(5,21,30,0.85) inset;
+-webkit-box-shadow: 0px -110px 87px -33px rgba(5,21,30,0.85) inset;
+-moz-box-shadow: 0px -110px 87px -33px rgba(5,21,30,0.85) inset;
+}
+.nav {
+    display: none;
+    z-index: 5;
+    height: auto;
+    width: 13vw;
+    transition: 0.5s ease-in-out;
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+.nav.navActive {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #05151E;
+}
+.nav li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    width: 13vw;
+    text-align: left;
+    padding: 0 0 0 1.5rem;
+    transition: 0.20s ease-in-out;
+}
+
+.first:hover {
+    background-color: #10436185;    
+}
+.second:hover {
+    background-color: #10436185;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+.logoutIcon {
+    width: 3rem;
+    height: 3rem;
+    float: left;
+}
+.profilesIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    float: left;
+}
