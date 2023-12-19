@@ -16,4 +16,12 @@ class ProfileManager
   public function store(Profile $profile)
   {
   }
+
+  public function update($profile_id) {
+
+  }
+
+  public function getProfileById($profile_id) {
+    
+  }
 }

@@ -3,6 +3,8 @@ namespace Streaming\Controllers;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
+use Streaming\Models\Movie;
+use Streaming\Models\MovieManager;
 
 class MovieController 
 {
@@ -71,6 +73,14 @@ class MovieController
     ]);
     
     var_dump( $response->getBody());
+
+  }
+
+  public function showMovie($movie_id) {
+
+  }
+
+  public function searchMovieByName($movie_name) {
 
   }
 }

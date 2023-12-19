@@ -17,4 +17,12 @@ class MovieManager
   {
     
   }
+
+  public function getMovieByName($movie_name) {
+
+  }
+
+  public function getMovieById($movie_id) {
+    
+  }
 }
