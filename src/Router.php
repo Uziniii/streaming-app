@@ -7,39 +7,44 @@ use Streaming\Route;
 /** Class Router **/
 class Router
 {
-  private $url;
-  private $routes = [];
+    private $method;
+    private $url;
+    private $routes = [];
 
-  public function __construct($url)
-  {
-    $this->url = $url;
-  }
-
-  public function get($path, $callable)
-  {
-    $route = new Route($path, $callable);
-    $this->routes["GET"][] = $route;
-    return $route;
-  }
-
-  public function post($path, $callable)
-  {
-    $route = new Route($path, $callable);
-    $this->routes["POST"][] = $route;
-    return $route;
-  }
-
-  public function run()
-  {
-    if (!isset($this->routes[$_SERVER['REQUEST_METHOD']])) {
-      throw new \Exception('REQUEST_METHOD does not exist');
+    public function __construct($method, $url)
+    {
+        $this->method = $method;
+        $this->url = $url;
     }
-    foreach ($this->routes[$_SERVER['REQUEST_METHOD']] as $route) {
-      if ($route->match($this->url)) {
-        return $route->call();
-      }
+
+    public function addRoute($method, $path, $callback)
+    {
+        $this->routes[$method][] = new Route($path, $callback);
     }
-    // throw new \Exception('No matching routes');
-    require VIEWS . '404.php';
-  }
+
+    public function get($path, $callback)
+    {
+        $this->addRoute('GET', $path, $callback);
+    }
+
+    public function post($path, $callback)
+    {
+        $this->addRoute('POST', $path, $callback);
+    }
+
+    public function run()
+    {
+        if (!isset($this->routes[$this->method])) {
+            throw new \Exception('REQUEST_METHOD does not exist');
+        }
+
+        foreach ($this->routes[$this->method] as $route) {
+            if ($route->match($this->url)) {
+                return $route->call();
+            }
+        }
+
+        // No matching route found
+        require VIEWS . '404.php';
+    }
 }

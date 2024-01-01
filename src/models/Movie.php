@@ -10,6 +10,7 @@ class Movie {
     private $movie_backdrop;
     private $movie_length;
 
+
     public function  __construct () {
         
     }

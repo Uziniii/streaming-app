@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8"> <!--Meta-->
+    <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MovApp</title>
-    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/header.css"> 
     <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
     <header class="header">
         <div class="headerContainer">
@@ -21,7 +20,7 @@
                 <div class="headerSearchContainer">
                     <form action="/search" class="headerSearchForm" id="headerSearchForm">
                         <input type="text" placeholder="Search a movie" maxLength="40" class="headerSearchBar" id="headerSearchBar">
-                        <img class="headerSearchBarLogo" src="/img/icons8-magnifying-glass-96.png"></img>
+                        <img class="headerSearchBarLogo" src="/img/icons8-magnifying-glass-96.png" alt="">
                     </form>
                 </div>
                 <div class="login">
@@ -31,9 +30,9 @@
                 </div>
             </div>
         </div>
-        <nav class="nav">   
+        <nav class="nav">
             <ul>
-                <a href="/profile">
+                <a href="">
                     <li class="first">
                         <img src="/img/Family Man Woman Girl Boyfamily_icon.png" alt="" class="profilesIcon">
                         Manage Profile
@@ -48,4 +47,5 @@
             </ul>
         </nav>
     </header>
+
     <main>

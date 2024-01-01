@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<smilies_export>
+  <smilie_categories>
+    <smilie_category id="5" title="Gamepad" display_order="4"/>
+  </smilie_categories>
+  <smilies>
+    <smilie smilie_category_id="5" title="PSX D-Pad Up" display_order="10" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-44" bs="100%"/>
+      <smilie_text>:psx_dpadu:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX D-Pad Down" display_order="20" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-66" bs="100%"/>
+      <smilie_text>:psx_dpadd:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX D-Pad Left" display_order="30" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-88" bs="100%"/>
+      <smilie_text>:psx_dpadl:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX D-Pad Right" display_order="40" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-110" bs="100%"/>
+      <smilie_text>:psx_dpadr:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX Triangle" display_order="50" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-132" bs="100%"/>
+      <smilie_text>:psx_t:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX Circle" display_order="60" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-154" bs="100%"/>
+      <smilie_text>:psx_c:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX Cross" display_order="70" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-176" bs="100%"/>
+      <smilie_text>:psx_x:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX Square" display_order="80" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-198" bs="100%"/>
+      <smilie_text>:psx_s:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PS4 PSN" display_order="90" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-220" bs="100%"/>
+      <smilie_text>:ps4_psn:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX L1" display_order="100" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-242" bs="100%"/>
+      <smilie_text>:psx_l1:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX L2" display_order="110" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-264" bs="100%"/>
+      <smilie_text>:psx_l2:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX L3" display_order="120" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-286" bs="100%"/>
+      <smilie_text>:psx_l3:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX R1" display_order="130" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-308" bs="100%"/>
+      <smilie_text>:psx_r1:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX R2" display_order="140" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-330" bs="100%"/>
+      <smilie_text>:psx_r2:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX R3" display_order="150" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-352" bs="100%"/>
+      <smilie_text>:psx_r3:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PS4 Touchpad" display_order="160" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="0" bs="100%"/>
+      <smilie_text>:ps4_tch:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PS4 Touchpad Click" display_order="170" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-22" bs="100%"/>
+      <smilie_text>:ps4_tchcl:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PS4 Options" display_order="180" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-374" bs="100%"/>
+      <smilie_text>:ps4_opt:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PS4 Share" display_order="190" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-396" bs="100%"/>
+      <smilie_text>:ps4_sha:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX Start" display_order="200" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-440" bs="100%"/>
+      <smilie_text>:psx_sta:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="PSX Select" display_order="210" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-418" bs="100%"/>
+      <smilie_text>:psx_sel:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox D-Pad Up" display_order="300" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-462" bs="100%"/>
+      <smilie_text>:xb_dpadu:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox D-Pad Down" display_order="310" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-484" bs="100%"/>
+      <smilie_text>:xb_dpadd:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox D-Pad Left" display_order="320" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-506" bs="100%"/>
+      <smilie_text>:xb_dpadl:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox D-Pad Right" display_order="330" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-528" bs="100%"/>
+      <smilie_text>:xb_dpadr:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox Y" display_order="340" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-550" bs="100%"/>
+      <smilie_text>:xb_y:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox B" display_order="350" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-572" bs="100%"/>
+      <smilie_text>:xb_b:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox A" display_order="360" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-594" bs="100%"/>
+      <smilie_text>:xb_a:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox X" display_order="370" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-616" bs="100%"/>
+      <smilie_text>:xb_x:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox XBL" display_order="380" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-770" bs="100%"/>
+      <smilie_text>:xb_xbl:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox LB" display_order="390" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-638" bs="100%"/>
+      <smilie_text>:xb_lb:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox LT" display_order="400" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-660" bs="100%"/>
+      <smilie_text>:xb_lt:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox L Stick" display_order="410" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-682" bs="100%"/>
+      <smilie_text>:xb_ls:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox RB" display_order="420" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-704" bs="100%"/>
+      <smilie_text>:xb_rb:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox RT" display_order="430" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-726" bs="100%"/>
+      <smilie_text>:xb_rt:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox R Stick" display_order="440" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-748" bs="100%"/>
+      <smilie_text>:xb_rs:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox Start" display_order="450" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-792" bs="100%"/>
+      <smilie_text>:xb_sta:</smilie_text>
+    </smilie>
+    <smilie smilie_category_id="5" title="Xbox Back" display_order="460" display_in_editor="1">
+      <image_url>styles/default/xenforo/smilies/gamepad/sprite_sheet_gamepad.png</image_url>
+      <image_url_2x></image_url_2x>
+      <sprite_params w="22" h="22" x="0" y="-814" bs="100%"/>
+      <smilie_text>:xb_bac:</smilie_text>
+    </smilie>
+  </smilies>
+</smilies_export>

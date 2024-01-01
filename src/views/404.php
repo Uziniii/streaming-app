@@ -1,4 +1,5 @@
 <?php
 http_response_code(404);
-include('my_404.php'); // provide your own HTML for the error page
+set_include_path(get_include_path() . PATH_SEPARATOR . 'path/to/your/includes');
+// provide your own HTML for the error page
 die();

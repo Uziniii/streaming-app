@@ -692,7 +692,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "aldobarr/qbittorrent-php": 15
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
