@@ -15,6 +15,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    padding: 0px 7vw;
 }
 
 .startBannerAnimation {
@@ -36,9 +37,7 @@ main {
     }
 }
 
-.bannerContainer {
-    padding: 0 0 3rem 6rem;
-}
+
 .bannerMovieDesc {
     color: white;
     font-size: 1.2rem;
@@ -50,8 +49,8 @@ main {
 }
 .movieCaroussel {
     display: flex;
-    justify-content: space-around;
-    width: 97%;
+    justify-content: space-between;
+    width: 100%;
     margin: 0 auto;
 }
 .horizontalCard {
@@ -82,14 +81,14 @@ main {
 .categoryMovies {
     display: flex;
     flex-direction: column;
-    width: 89%;
-    margin: 0 auto;
-    padding : 5rem 0;
+    width: 100%;
+    
+    padding: 7vh 7vw;
 }
 .categoryTitleContainer {
     display: flex;
     align-items: center;
-    padding: 0 0 0rem 0;
+    padding: 0 0 2.5vh 0;
 }
 .categoryTitle {
     color: white;
@@ -112,9 +111,18 @@ main {
     flex-direction: column;
     row-gap: 0.2rem;
     color: white;
+    height: 355.5px;
+    width: 195px;
 }
+
 .verticalCardDate {
     font-size: 1rem;
+}
+.verticalCardTitle{
+    white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .verticalCardImage {
 
@@ -124,6 +132,8 @@ main {
     margin: 0 0 1rem 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-size: cover;
+    height: 100%;
+  width: 100%;
 }
 
 .movie-details {
@@ -233,5 +243,6 @@ footer {
   }
   .verticalCardRow{
     display: flex;
-  flex-wrap: wrap;
+    justify-content: space-between;
   }
+  

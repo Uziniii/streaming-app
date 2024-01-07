@@ -1,1 +1,3 @@
 /vendor/
+/torrent_server/node_modules/
+/public/movies

@@ -30,18 +30,17 @@ class Route
 
     public function call()
     {
-        if (is_callable($this->callable)) {
-            return call_user_func_array($this->callable, $this->matches);
+        session_start();
+        $rep = explode("@", $this->callable);
+        
+        if (!isset($_SESSION['selectedProfileId']) && $rep[0] != "ProfilesController") {
+            header('Location: /profiles');
+            exit;
         }
 
-        if (is_string($this->callable)) {
-            $rep = explode("@", $this->callable);
-            $controller = "Streaming\\Controllers\\" . $rep[0];
-            $controller = new $controller();
+        $controller = "Streaming\\Controllers\\" . $rep[0];
+        $controller = new $controller();
 
-            return call_user_func_array([$controller, $rep[1]], $this->matches);
-        }
-
-        throw new \Exception('Invalid callable provided for route.');
+        return call_user_func_array([$controller, $rep[1]], $this->matches);
     }
 }

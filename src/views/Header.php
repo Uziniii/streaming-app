@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MovApp</title>
+    <script src="https://kit.fontawesome.com/5fa9a1caed.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/header.css"> 
+    <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/movieModal.css">
 </head>
+
 <body>
     <header class="header">
         <div class="headerContainer">
@@ -17,19 +21,23 @@
                 <div class="logo"></div>
             </a>
             <div class="SearchLoginContainer">
-                <div class="headerSearchContainer">
-                    <form action="/search" class="headerSearchForm" id="headerSearchForm">
-                        <input type="text" placeholder="Search a movie" maxLength="40" class="headerSearchBar" id="headerSearchBar">
-                        <img class="headerSearchBarLogo" src="/img/icons8-magnifying-glass-96.png" alt="">
-                    </form>
-                </div>
-                <div class="login">
+    <div class="headerSearchContainer">
+        <form action="/searchmovie" method="POST" class="headerSearchForm" id="headerSearchForm">
+            <input type="text" placeholder="Search a movie" maxLength="40" class="headerSearchBar" name="search_query" id="headerSearchBar">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <div class="login">
                     <button class="menuBurgerBtn">
                         <img class="menuBurgerIcon" src="/img/Untitledicon_profil.png" alt="">
                     </button>
                 </div>
             </div>
         </div>
+</div>
+
+
+                
         <nav class="nav">
             <ul>
                 <a href="">

@@ -3,7 +3,7 @@
         <p>Movapp 2023</p>
     </footer>
 
-    <script src="/js/script.js"></script>
+    <script defer src="/js/script.js"></script>
     
 </body>
 </html>

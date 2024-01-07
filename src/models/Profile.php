@@ -3,32 +3,31 @@ namespace Streaming\Models;
 
 class Profile 
 {
-  private $profil_id;
-  private $profil_name;
+  private $profile_id;
+  private $profile_name;
 
   public function __construct()
   {
 
   }
 
-  public function getProfilId()
+  public function getProfileId()
   {
-    return $this->profil_id;
+    return $this->profile_id;
   }
 
-  public function setProfilId($profil_id)
+  public function setProfileId($profile_id)
   {
-    $this->profil_id = $profil_id;
+    $this->profile_id = $profile_id;
   }
 
-  public function getProfilName()
+  public function getProfileName()
   {
-    return $this->profil_name;
+    return $this->profile_name;
   }
 
-  public function setProfilName($profil_name)
+  public function setProfileName($profile_name)
   {
-    $this->profil_name = $profil_name;
+    $this->profile_name = $profile_name;
   }
-
 }

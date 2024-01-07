@@ -28,8 +28,8 @@ CREATE TABLE movies
 /*==============================================================*/
 CREATE TABLE profiles
 (
-   profil_id            INT NOT NULL AUTO_INCREMENT,
-   profil_name          VARCHAR(50),
+   profile_id            INT NOT NULL AUTO_INCREMENT,
+   profile_name          VARCHAR(50),
    PRIMARY KEY (profil_id)
 );
 
@@ -40,11 +40,11 @@ CREATE TABLE watch_details
 (
    watch_details_id     INT NOT NULL AUTO_INCREMENT,
    movie_id             INT NOT NULL,
-   profil_id            INT NOT NULL,
+   profile_id            INT NOT NULL,
    watch_details_time   INT,
    watch_details_liked  BOOLEAN,
    watch_details_watched BOOLEAN,
    PRIMARY KEY (watch_details_id),
    CONSTRAINT fk_concern FOREIGN KEY (movie_id) REFERENCES movies (movie_id) ON DELETE RESTRICT ON UPDATE RESTRICT,
-   CONSTRAINT fk_relating FOREIGN KEY (profil_id) REFERENCES profiles (profil_id) ON DELETE RESTRICT ON UPDATE RESTRICT
+   CONSTRAINT fk_relating FOREIGN KEY (profile_id) REFERENCES profiles (profile_id) ON DELETE RESTRICT ON UPDATE RESTRICT
 );

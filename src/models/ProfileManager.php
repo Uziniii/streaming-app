@@ -15,10 +15,21 @@ class ProfileManager
 
   public function store(Profile $profile)
   {
+    $stmt = $this->db->prepare('INSERT INTO profiles (profile_name) VALUES (?)');
+    $stmt->execute([$profile->getProfileName()]);
+    
+    return $this->db->lastInsertId();
   }
 
   public function update($profile_id) {
 
+  }
+
+  public function getAllProfiles() {
+    $stmt = $this->db->prepare('SELECT * FROM profiles');
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_CLASS, Profile::class);
   }
 
   public function getProfileById($profile_id) {
