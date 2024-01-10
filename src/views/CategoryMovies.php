@@ -5,6 +5,12 @@ require_once("../src/config/config.php");
 
 // Create an instance of MovieController
 $movieController = new Streaming\Controllers\MovieController(new Streaming\Models\MovieManager());
+	include('tmdb-api.php');
+	
+	// if you have a $conf array - (See LIB_ROOT/configuration/default.php as an example)
+	$tmdb = new TMDB($conf);
+	
+
 
 ?>
 <div class="trendingCategory">
@@ -16,8 +22,20 @@ $movieController = new Streaming\Controllers\MovieController(new Streaming\Model
     </div>
     <div class="verticalCardRow">
         <?php
-        echo $movieController->showCategories($limit = 6, "top_rated", "vertical");
-
+         $movies = $tmdb->getTopRatedMovies();
+         echo '  <div class="panel panel-default">
+                     <div class="panel-heading">
+                         Top Rated Movies
+                     </div>
+                     <div class="panel-body">
+                         <ul>';
+         foreach($movies as $movie){
+             echo '          <li>'. $movie->getTitle() .' (<a href="https://www.themoviedb.org/movie/'. $movie->getID() .'">'. $movie->getID() .'</a>)</li>';
+         }
+         echo '          </ul>
+                     </div>
+                 </div>';
+                 
         ?>
     </div>
     <dialog id="modal">
@@ -61,7 +79,9 @@ $movieController = new Streaming\Controllers\MovieController(new Streaming\Model
                     </div>
                 </div>
                 <div class="modalBannerBtn">
-                    <button class='modalLikeBtn'>like</button>
+                    <button class='modalLikeBtn'>
+                        <div class="modalLikeBtnImg"></div>
+                    </button>
                 </div>
             </div>
             
@@ -69,7 +89,7 @@ $movieController = new Streaming\Controllers\MovieController(new Streaming\Model
                 <a id="magnet"><svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg></a>
                 <div class="modalRating modalCard">
                     <p class="modalCardTitle">rating</p>
-                    <p class="modalRating modalCardContent">PG</p>
+                    <p class="modalRating modalCardContent"></p>
                 </div>
                 <div class="modalRelease modalCard">
                     <p class="modalCardTitle">release</p>
@@ -77,11 +97,11 @@ $movieController = new Streaming\Controllers\MovieController(new Streaming\Model
                 </div>
                 <div class="modalBudget modalCard">
                     <p class="modalCardTitle">budget</p>
-                    <p class="modalBudget modalCardContent">162$</p>
+                    <p class="modalBudget modalCardContent"></p>
                 </div>
                 <div class="modalLength modalCard">
                     <p class="modalCardTitle">length</p>
-                    <p class="modalLength modalCardContent">132min</p>
+                    <p class="modalLength modalCardContent"></p>
                 </div>
             </div>
         </div>

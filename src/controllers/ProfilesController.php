@@ -23,6 +23,12 @@ class ProfilesController
         $profile = new Profile();
         $profile->setProfileName($_POST['name']);
         $this->profileManager->store($profile);
+
+        session_start();
+
+        $_SESSION['selectedProfileId'] = $profile->getProfileId();
+
+        header('Location: /homepage');
     }
 
     public function showAddProfile()

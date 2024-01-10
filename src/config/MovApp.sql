@@ -30,7 +30,7 @@ CREATE TABLE profiles
 (
    profile_id            INT NOT NULL AUTO_INCREMENT,
    profile_name          VARCHAR(50),
-   PRIMARY KEY (profil_id)
+   PRIMARY KEY (profile_id)
 );
 
 /*==============================================================*/

@@ -14,7 +14,7 @@ class MovieController
     public const CATEGORIES = [
         'top_rated' => ['type' => 'movie', 'category' => 'top_rated', 'page' => '1', 'cardType' => 'horizontal'],
         'trending' => ['type' => 'trending', 'category' => 'movie/week', 'page' => '1', 'cardType' => 'vertical'],
-        'search' => ['type ' => 'search', 'movie', '? .$query', 'page' => '1', 'cartype' => 'vertical'],
+    
     ];
 
     public function __construct()
@@ -66,7 +66,7 @@ class MovieController
 
         return $content;
     }
-
+    
     // Function to generate a vertical card
     public  function generateVerticalCard($movie)
     {

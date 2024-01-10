@@ -14,6 +14,6 @@ class IndexController {
             exit();
         }
         
-        header('Location: /movie');
+        header('Location: /homepage');
     }
 }

@@ -54,13 +54,26 @@ function openDialog(movieId) {
     const aMagnet = document.getElementById("magnet");
     const modalTitle = document.querySelector(".modalBannerTitle");
     const modalBannerDesc = document.querySelector(".modalBannerDesc")
-    const modalReleaseDate = document.querySelector(".modalReleaseDate");
     const modalBackdrop = document.querySelector('.modalBackdrop');
+
+    const modalDescription = document.querySelector('.modalDescription');
+
+    const modalReleaseDate = document.querySelector(".modalReleaseDate");
+    const modalLength = document.querySelector('.modalLength');
+    const modalBudget = document.querySelector('.modalBudget');
+    const modalRating = document.querySelector('.modalRating');
 
     aMagnet.href = magnet;
     modalTitle.textContent = movieDetails.title;
     modalReleaseDate.textContent = "" + movieDetails.release_date + "";
-    // modalBackdrop.style.backgroundImage = "url(" + movieDetails.backdrop_path + ")"
+    modalBannerDesc.textContent = "" + movieDetails.director + "";
+    modalDescription.textContent = "" + movieDetails.overview + "";
+    modalBudget.textContent = "" + movieDetails.budget + "";
+    modalRating.textContent = "" + movieDetails.rating + "";
+    modalLength.textContent = "" + movieDetails.runtime + "";
+
+
+    
     
     dialog.showModal();
 }
