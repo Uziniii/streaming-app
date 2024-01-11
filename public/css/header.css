@@ -11,11 +11,10 @@ body {
     width : 100%;
     height : 100vh;
     font-family: 'Poppins', sans-serif;
-    padding-right: 15px;
 }
 
 .headerContainer {
-    width : 100%;
+    width : 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;   
@@ -35,7 +34,6 @@ header {
     position: fixed;
     margin: 0 auto;
     opacity: 100%;
-    padding: 0px 7vw;
     
 }
 
@@ -85,49 +83,90 @@ header {
     color: white;
 }
 .headerSearchBarLogo {
-    width: 2rem;
-    height: 2rem;
+    width: 1.6rem;
+    height: 1.6rem;
     cursor: pointer;
     margin: 0 1rem 0 0 ;
 }
-.menuBurgerBtn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    height : 15vh;
-}
-.menuBurgerIcon {
-    width: 3.8rem;
-    height: 3.8rem;
-}
+
 .headerActive {
     background-color: #05151E50;
     backdrop-filter: blur(2px);
     opacity: 100%;
 }
 
+.menuBurgerBtn {
+    background-color: #17618b85;
+    border: none;
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    position: relative;
+    
+    height : 5vh;
+    width: 8rem;
+    
+    transition: 0.25s ease-in-out;
+
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+}
+.menuBurgerBtn:hover {
+    background-color: #3a8bb975;
+
+    transform: scale(1.05);
+}
+
+.menuLineContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.menuLines {
+    background-color: #e0e0e0;
+
+    width: 2rem;
+    height: 3px;
+
+}
+.menuBurgerBtn i {
+    color: white;
+}
 .menuActive .headerContainer {
     justify-content: space-between;
     align-items: center;
 }
 .menuActive header {
     width: 100vw;
+
     background-color: transparent;
     align-items: center;
 }
 .menuBurgerBtn.menuBurgerActive{
-    background-color: #05151E;
-    box-shadow: 0px -110px 87px -33px rgba(5,21,30,0.85) inset;
--webkit-box-shadow: 0px -110px 87px -33px rgba(5,21,30,0.85) inset;
--moz-box-shadow: 0px -110px 87px -33px rgba(5,21,30,0.85) inset;
+    background-color: #3a8bb9;
 }
 .menuBurgerIcon.menuBurgerActive{
-    background-color: #05151E;
-    box-shadow: 0px -110px 87px -33px rgba(5,21,30,0.85) inset;
--webkit-box-shadow: 0px -110px 87px -33px rgba(5,21,30,0.85) inset;
--moz-box-shadow: 0px -110px 87px -33px rgba(5,21,30,0.85) inset;
+    background-color: #3a8bb9;
 }
+
+.menuActive .fa-chevron-up {
+    animation: chevronRotate 0.5s ease-in 1 initial linear;
+}
+
+@keyframes chevronRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
 .nav {
     display: none;
     z-index: 5;
@@ -136,50 +175,48 @@ header {
     transition: 0.5s ease-in-out;
     position: absolute;
     top: 100%;
-    right: 5%;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    right : 5%;
+    border-radius: 10px;
 }
-
 .nav a {
     text-decoration: none;
     list-style: none;
-    color: white;
+    color: rgb(58, 72, 97);
 }
-.nav.navActive {
+.nav.navActive {    
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #05151E;
+    background-color: #061a33;
 }
 .nav li {
     display: flex;
     gap: 10px;
     align-items: center;
+
     font-size: 1.2rem;
+    text-align: left;
+
     height: 2.5rem;
     width: 13vw;
-    text-align: left;
+
     padding: 0 0 0 1.5rem;
+
     transition: 0.20s ease-in-out;
+}
+.nav li:hover {
+    color: #e2e2e2;
 }
 
 .first:hover {
-    background-color: #10436185;    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .second:hover {
-    background-color: #10436185;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
-.logoutIcon {
-    width: 3rem;
-    height: 3rem;
-    float: left;
-}
-.profilesIcon {
-    width: 1.5rem;
-    height: 1.5rem;
-    float: left;
+.nav li i {
+    transform: rotate(0deg);
 }

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/movieModal.css">
+    <script defer src="/js/script.js"></script>
+
 </head>
 
 <body>
@@ -29,7 +31,12 @@
     </div>
     <div class="login">
                     <button class="menuBurgerBtn">
-                        <img class="menuBurgerIcon" src="/img/Untitledicon_profil.png" alt="">
+                        <div class="menuLineContainer">
+                            <span class="menuLines"></span>
+                            <span class="menuLines"></span>
+                            <span class="menuLines"></span>
+                        </div>
+                        <i class="fa-solid fa-chevron-up"></i>
                     </button>
                 </div>
             </div>
@@ -42,14 +49,14 @@
             <ul>
                 <a href="">
                     <li class="first">
-                        <img src="/img/Family Man Woman Girl Boyfamily_icon.png" alt="" class="profilesIcon">
-                        Manage Profile
+                        <i class="fa-solid fa-user-group"></i>
+                        Switch Profile
                     </li>
                 </a>
                 <a href="">
                     <li class="second">
-                        <img src="/img/Untitledicon_logout.png" alt="" class="logoutIcon">
-                        Log out
+                        <i class="fa-solid fa-film"></i>
+                        WatchList
                     </li>
                 </a>
             </ul>

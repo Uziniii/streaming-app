@@ -1,3 +1,46 @@
+// HEADER REGION 
+
+let header = document.querySelector('header');
+
+window.addEventListener('scroll', function() {
+    var header = document.querySelector('header');
+
+    // Ajoute ou supprime une classe en fonction de la position du défilement
+    if (window.scrollY > 0) {
+        header.classList.add('headerActive');
+    } else {
+        header.classList.remove('headerActive');
+    }
+});
+
+let menuBurgerBtn = document.querySelector('.menuBurgerBtn');
+let menuBurgerIcon = document.querySelector('.menuBurgerIcon');
+let nav = document.querySelector('.nav');
+
+menuBurgerBtn.addEventListener('click', function (e) {
+    e.stopPropagation(); // Prevent the click event from reaching the document body
+    header.classList.toggle('menuActive');
+    nav.classList.toggle('navActive');
+    menuBurgerBtn.classList.toggle('menuBurgerActive');
+});
+menuBurgerBtn.addEventListener('mouseenter', function (e) {
+    e.stopPropagation(); // Prevent the click event from reaching the document body
+    header.classList.toggle('menuActive');
+    nav.classList.toggle('navActive');
+    menuBurgerBtn.classList.toggle('menuBurgerActive');
+});
+
+document.body.addEventListener('click', function (e) {
+    if (!menuBurgerBtn.contains(e.target) && !nav.contains(e.target)) {
+        // Clicked outside menuBurgerBtn and nav, close the navigation
+        header.classList.remove('menuActive');
+        nav.classList.remove('navActive');
+        menuBurgerBtn.classList.remove('menuBurgerActive');     
+    }
+});
+
+// HEADER REGION ENDS 
+
 const container = document.querySelector(".movieCaroussel");
 const trendingContainer = document.getElementById("trendingContainer");
 const banner = document.querySelector(".bannerContainer");
