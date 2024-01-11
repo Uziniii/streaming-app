@@ -3,13 +3,12 @@
 require_once("../vendor/autoload.php");
 require_once("../src/config/config.php");
 
-// Create an instance of MovieController
-$movieController = new Streaming\Controllers\MovieController(new Streaming\Models\MovieManager());
-	include('tmdb-api.php');
+include('../tmdb_v3-PHP-API-/tmdb-api.php');
 	
-	// if you have a $conf array - (See LIB_ROOT/configuration/default.php as an example)
-	$tmdb = new TMDB($conf);
-	
+// if you have no $conf it uses the default config
+$tmdb = new TMDB(); 
+$tmdb->setAPIKey('413b9803176b9511f07df571cbb2e11c');
+
 
 
 ?>
@@ -23,20 +22,18 @@ $movieController = new Streaming\Controllers\MovieController(new Streaming\Model
     <div class="verticalCardRow">
         <?php
          $movies = $tmdb->getTopRatedMovies();
-         echo '  <div class="panel panel-default">
-                     <div class="panel-heading">
-                         Top Rated Movies
-                     </div>
-                     <div class="panel-body">
-                         <ul>';
          foreach($movies as $movie){
-             echo '          <li>'. $movie->getTitle() .' (<a href="https://www.themoviedb.org/movie/'. $movie->getID() .'">'. $movie->getID() .'</a>)</li>';
+            echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';
+            echo '<div class="verticalCardImage" style="background-image: url(' . $tmdb->getImageURL() . $movie->getPoster() . ');"></div>';
+            echo '<h3 class="verticalCardTitle">' . $movie->getTitle() . '</h3>';
+    
+            echo '</article>';
          }
-         echo '          </ul>
-                     </div>
-                 </div>';
                  
         ?>
+   
+        
+
     </div>
     <dialog id="modal">
         <button onclick="closeModal('modal')" autofocus class="modalExit">

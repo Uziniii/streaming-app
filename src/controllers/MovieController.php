@@ -32,42 +32,42 @@ class MovieController
         require VIEWS . 'Homepage.php';
     }
 
-    public function showCategories($limit, $categoryName, $cardType)
-    {
-        $content = '';
+    // public function showCategories($limit, $categoryName, $cardType)
+    // {
+    //     $content = '';
 
-        try {
-            $categoryParams = self::CATEGORIES[$categoryName];
+    //     try {
+    //         $categoryParams = self::CATEGORIES[$categoryName];
 
-            // Fetch data for the specified category
-            $categoryData = MoviesData::fetchData($categoryParams['type'], $categoryParams['category'], $categoryParams['page']);
+    //         // Fetch data for the specified category
+    //         $categoryData = MoviesData::fetchData($categoryParams['type'], $categoryParams['category'], $categoryParams['page']);
 
-            // Check if $categoryData is not null before proceeding with foreach
-            if ($categoryData !== null) {
-                // Loop to generate cards for the current category with a limit
-                $counter = 0;
-                foreach ($categoryData as $movie) {
-                    if ($cardType === 'horizontal') {
-                        $content .= $this->generateHorizontalCard($movie);
-                    } else {
-                        $this->generateVerticalCard($movie);
-                    }
-                    $counter++;
+    //         // Check if $categoryData is not null before proceeding with foreach
+    //         if ($categoryData !== null) {
+    //             // Loop to generate cards for the current category with a limit
+    //             $counter = 0;
+    //             foreach ($categoryData as $movie) {
+    //                 if ($cardType === 'horizontal') {
+    //                     $content .= $this->generateHorizontalCard($movie);
+    //                 } else {
+    //                     $this->generateVerticalCard($movie);
+    //                 }
+    //                 $counter++;
 
-                    // Break the loop if the limit is reached
-                    if ($counter >= $limit) {
-                        break;
-                    }
-                }
-            }
-        } catch (Exception $e) {
-            echo 'Error: ' . $e->getMessage();
-        }
+    //                 // Break the loop if the limit is reached
+    //                 if ($counter >= $limit) {
+    //                     break;
+    //                 }
+    //             }
+    //         }
+    //     } catch (Exception $e) {
+    //         echo 'Error: ' . $e->getMessage();
+    //     }
 
-        return $content;
-    }
+    //     return $content;
+    // }
     
-    // Function to generate a vertical card
+
     public  function generateVerticalCard($movie)
     {
         // Convert the movie details to a JSON string
@@ -81,19 +81,19 @@ class MovieController
         echo '</article>';
     }
 
-        public function generateHorizontalCard($movie)
-        {
-            // Convert the movie details to a JSON string
-            $movieDetailsJson = json_encode($movie);
+        // public function generateHorizontalCard($movie)
+        // {
+        //     // Convert the movie details to a JSON string
+        //     $movieDetailsJson = json_encode($movie);
 
-            // Remplacez la ligne suivante par la logique de récupération de l'image de fond depuis Fanart
-            $fanartBackdrop = MoviesData::getFanartBackdropPath($movie['id']);
+        //     // Remplacez la ligne suivante par la logique de récupération de l'image de fond depuis Fanart
+        //     $fanartBackdrop = MoviesData::getFanartBackdropPath($movie['id']);
 
-            return '<input hidden id="movieDetails-' . $movie['id'] . '" type="text" value=\'' . htmlspecialchars($movieDetailsJson, ENT_QUOTES, 'UTF-8') . '\' />'
-            .   '<article class="horizontalCard" style="background-image: url(\'' . $fanartBackdrop . '\');">'
-            .   '<h3 class="horizontalCardTitle">' . $movie['title'] . '</h3>'
-            .   '</article>';
-        }
+        //     return '<input hidden id="movieDetails-' . $movie['id'] . '" type="text" value=\'' . htmlspecialchars($movieDetailsJson, ENT_QUOTES, 'UTF-8') . '\' />'
+        //     .   '<article class="horizontalCard" style="background-image: url(\'' . $fanartBackdrop . '\');">'
+        //     .   '<h3 class="horizontalCardTitle">' . $movie['title'] . '</h3>'
+        //     .   '</article>';
+        // }
 
 
     // public function showMovie($movieId)

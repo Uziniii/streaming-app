@@ -1,5 +1,5 @@
 {
-  "name": "uzini/streaming-app",
+  "name": "reverbman/streaming-app",
   "autoload": {
     "psr-4": {
       "Streaming\\": "src/"
