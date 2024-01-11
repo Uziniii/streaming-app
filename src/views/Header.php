@@ -23,13 +23,14 @@
                 <div class="logo"></div>
             </a>
             <div class="SearchLoginContainer">
-    <div class="headerSearchContainer">
-        <form action="/searchmovie" method="POST" class="headerSearchForm" id="headerSearchForm">
-            <input type="text" placeholder="Search a movie" maxLength="40" class="headerSearchBar" name="search_query" id="headerSearchBar">
-            <button type="submit">Search</button>
-        </form>
-    </div>
-    <div class="login">
+                <div class="headerSearchContainer">
+                    <form action="/searchmovie" method="GET" class="headerSearchForm" id="headerSearchForm">
+                        <input type="text" placeholder="Search a movie" maxLength="40" class="headerSearchBar" name="search_query" id="headerSearchBar">
+                        <button type="submit">Search</button>
+                    </form>
+
+                </div>
+                <div class="login">
                     <button class="menuBurgerBtn">
                         <div class="menuLineContainer">
                             <span class="menuLines"></span>
@@ -41,10 +42,10 @@
                 </div>
             </div>
         </div>
-</div>
+        </div>
 
 
-                
+
         <nav class="nav">
             <ul>
                 <a href="">
