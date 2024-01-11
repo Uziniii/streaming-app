@@ -144,6 +144,9 @@ header {
     background-color: transparent;
     align-items: center;
 }
+.menuActive .fa-chevron-up {
+    animation : chevronRotate 0.5s ease-in 0.15s 1 initial linear;
+}
 .menuBurgerBtn.menuBurgerActive{
     background-color: #3a8bb9;
 }
@@ -151,10 +154,13 @@ header {
     background-color: #3a8bb9;
 }
 
+<<<<<<< Updated upstream
 .menuActive .fa-chevron-up {
     animation: chevronRotate 0.5s ease-in 1 initial linear;
 }
 
+=======
+>>>>>>> Stashed changes
 @keyframes chevronRotate {
     0% {
         transform: rotate(0deg);
