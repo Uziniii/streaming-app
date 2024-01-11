@@ -23,12 +23,6 @@ menuBurgerBtn.addEventListener('click', function (e) {
     nav.classList.toggle('navActive');
     menuBurgerBtn.classList.toggle('menuBurgerActive');
 });
-menuBurgerBtn.addEventListener('mouseenter', function (e) {
-    e.stopPropagation(); // Prevent the click event from reaching the document body
-    header.classList.toggle('menuActive');
-    nav.classList.toggle('navActive');
-    menuBurgerBtn.classList.toggle('menuBurgerActive');
-});
 
 document.body.addEventListener('click', function (e) {
     if (!menuBurgerBtn.contains(e.target) && !nav.contains(e.target)) {

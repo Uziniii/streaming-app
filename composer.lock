@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "43d471a7abead9c37343e0f555642a4b",
+    "content-hash": "d4d43411faece10642b477afe68fd420",
     "packages": [
         {
             "name": "aldobarr/qbittorrent-php",
