@@ -16,8 +16,9 @@ $router->get('/profiles', 'ProfilesController@showProfiles');
 $router->get('/profiles/add', 'ProfilesController@showAddProfile');
 $router->post('/profiles/add', 'ProfilesController@addProfile');
 $router->get('/movies', 'MovieController@showHomepage');
+$router->get('/searchmovie', 'SearchController@showSearch');
 
-$router->post('/searchmovie', 'SearchController@search');
+
 
 
 $router->get('/movies/download', 'MovieController@download');
