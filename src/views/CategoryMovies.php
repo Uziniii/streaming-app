@@ -6,7 +6,7 @@ require_once("../src/config/config.php");
 include('../tmdb_v3-PHP-API-/tmdb-api.php');
 	
 // if you have no $conf it uses the default config
-$tmdb = new TMDB(); 
+$tmdb = new \TMDB();
 $tmdb->setAPIKey('413b9803176b9511f07df571cbb2e11c');
 
 
