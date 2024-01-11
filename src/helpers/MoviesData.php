@@ -6,6 +6,11 @@ use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\RequestOptions;
 
+
+
+
+
+
 class MoviesData
 {
     // private const genreId = [
