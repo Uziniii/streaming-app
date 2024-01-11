@@ -1,17 +1,17 @@
 {
-  "name": "uzini/streaming-app",
-  "autoload": {
-    "psr-4": {
-      "Streaming\\": "src/"
+    "name": "reverbman/streaming-app",
+    "autoload": {
+      "psr-4": {
+        "Streaming\\": "src/"
+      }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+      "daijie/aria2": "^1.1",
+      "aldobarr/qbittorrent-php": "^0.2.0@alpha",
+      "guzzlehttp/guzzle-services": "^1.4",
+      "sunra/php-simple-html-dom-parser": "^1.5",
+      "php-tmdb/api": "^1.4"
     }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "require": {
-    "daijie/aria2": "^1.1",
-    "aldobarr/qbittorrent-php": "^0.2.0@alpha",
-    "guzzlehttp/guzzle-services": "^1.4",
-    "sunra/php-simple-html-dom-parser": "^1.5",
-    "php-tmdb/api": "^1.4"
-  }
-} 
+  } 
