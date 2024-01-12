@@ -1,33 +1,39 @@
 <?php
 
+
+
+
+// SearchController.php
+
 namespace Streaming\Controllers;
 
-// Include the tmdb-api.php file
-include('../tmdb_v3-PHP-API-/tmdb-api.php');
+require_once("../vendor/autoload.php");
+require_once("../src/config/config.php");
+
+require(__DIR__ . '/../../tmdb_v3-PHP-API--master/tmdb-api.php');
+
+
+
+// SearchController.php
 
 class SearchController
 {
-    private $tmdb;
-
-    public function __construct()
-    {
-    
-        $this->tmdb = new \TMDB(); 
-    }
-
     public function showSearch()
-{
-    echo "Before searchMovie<br>";
+    {
+        $tmdb = new \TMDB();
+        $searchResults = [];
 
-    $searchQuery = isset($_POST['search_query']) ? $_POST['search_query'] : '';
+        if (isset($_GET['search_query'])) {
+            $searchQuery = $_GET['search_query'];
 
-    $movies = $this->tmdb->searchMovie($searchQuery);
+            // Effectuer la recherche avec $tmdb et obtenir les résultats
+            $searchResults = $tmdb->searchMovie($searchQuery);
+        }
 
-    echo "After searchMovie<br>";
-
-  
-    require VIEWS . 'SearchMovie.php';
-
-    echo "After require<br>";
+        // Charger la vue avec les résultats de la recherche
+        include(__DIR__ . "/../views/SearchMovie.php");
+    }
 }
-}
+
+
+
