@@ -9,12 +9,14 @@ use Streaming\Router;
 
 $router = new Router($_SERVER['REQUEST_URI']);
 
+$router->post('/profiles/add', 'ProfilesController@addProfile');
+$router->post('/movie/{movieId}', 'MovieController@getMovieDetails');
+
 $router->get('/', 'IndexController@index');
 $router->get('/homepage', 'MovieController@showHomepage');
 $router->get('/profiles/select/:profile_id', 'ProfilesController@selectProfile');
 $router->get('/profiles', 'ProfilesController@showProfiles');
 $router->get('/profiles/add', 'ProfilesController@showAddProfile');
-$router->post('/profiles/add', 'ProfilesController@addProfile');
 $router->get('/movies', 'MovieController@showHomepage');
 $router->get('/searchmovie', 'SearchController@showSearch');
 

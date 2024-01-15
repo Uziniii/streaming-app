@@ -8,6 +8,8 @@ use GuzzleHttp\RequestOptions;
 use Streaming\Models\MovieManager;
 use Streaming\Helpers\MoviesData;
 
+
+
 class MovieController
 {
     private $movieManager;
@@ -65,9 +67,7 @@ class MovieController
     //     }
 
     //     return $content;
-    // }
-    
-
+    // 
     public  function generateVerticalCard($movie)
     {
         // Convert the movie details to a JSON string

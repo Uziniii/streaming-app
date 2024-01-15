@@ -100,18 +100,17 @@ function openDialog(movieId) {
     const modalBudget = document.querySelector('.modalBudget');
     const modalRating = document.querySelector('.modalRating');
 
-    aMagnet.href = magnet;
     modalTitle.textContent = movieDetails.title;
-    modalReleaseDate.textContent = "" + movieDetails.release_date + "";
-    modalBannerDesc.textContent = "" + movieDetails.director + "";
-    modalDescription.textContent = "" + movieDetails.overview + "";
-    modalBudget.textContent = "" + movieDetails.budget + "";
-    modalRating.textContent = "" + movieDetails.rating + "";
-    modalLength.textContent = "" + movieDetails.runtime + "";
+    modalReleaseDate.textContent = movieDetails.releaseDate;
+    modalBannerDesc.textContent = movieDetails.director;
+    modalBudget.textContent = movieDetails.budget;
+    modalLength.textContent = movieDetails.runtime;
+    modalRating.textContent = movieDetails.adult;
+    modalDescription.textContent = movieDetails.overview;
 
 
-    
-    
+    aMagnet.href = magnet;
+
     dialog.showModal();
 }
 
