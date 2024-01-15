@@ -14,16 +14,4 @@
       "sunra/php-simple-html-dom-parser": "^1.5",
       "php-tmdb/api": "^1.4"
     }
-<<<<<<< Updated upstream
-  } 
-=======
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "require": {
-    "daijie/aria2": "^1.1",
-    "guzzlehttp/guzzle-services": "^1.4",
-    "sunra/php-simple-html-dom-parser": "^1.5"
   }
-} 
->>>>>>> Stashed changes

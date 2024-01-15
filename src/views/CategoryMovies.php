@@ -25,18 +25,16 @@ $tmdb = new TMDB();
         <?php
 
 $movies = $tmdb->getTopRatedMovies();
-echo '  <div class="panel panel-default">
-            <div class="panel-heading">
-                Top Rated Movies
-            </div>
-            <div class="panel-body">
-                <ul>';
-foreach($movies as $movie){
-    echo '          <li>'. $movie->getTitle() .' (<a href="https://www.themoviedb.org/movie/'. $movie->getID() .'">'. $movie->getID() .'</a>)</li>';
-}
-echo '          </ul>
-            </div>
-        </div>';
+    foreach($movies as $movie){
+        echo '<input hidden id="magnet-' . $movie->getID() . '" type="text" value="' . htmlspecialchars('/download?magnet=' . urlencode($this->search($movie->getTitle()))) . '" />';
+        echo '<input hidden id="movieDetails-' . $movie->getID() . '" type="text" value="">';
+        echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';
+        echo '<div class="verticalCardImage" style="background-image: url(\'https://image.tmdb.org/t/p/w780/' . basename($movie->getPoster()) . '\');"></div>';
+        echo '<h3 class="verticalCardTitle">' . $movie->getTitle() . '</h3>';
+        echo '<div class="verticalCardDate">' . $movie->getReleaseDate() . '</div>';
+        echo '</article>';
+    }
+
         ?>
    
         

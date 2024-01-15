@@ -19,7 +19,7 @@
 <body>
     <header class="header">
         <div class="headerContainer">
-            <a href="Homepage.php">
+            <a href="/homepage">
                 <div class="logo"></div>
             </a>
             <div class="SearchLoginContainer">
