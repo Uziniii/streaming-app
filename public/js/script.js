@@ -74,15 +74,71 @@ closeButton.addEventListener("click", () => {
     dialog.close();
 });
 
+
+const genreId = [  //ALL THE GENRE
+{ id: 28, name: "Action" },
+{ id: 12, name: "Adventure" },
+{ id: 16, name: "Animation" },
+{ id: 35, name: "Comedy" },
+{ id: 80, name: "Crime" },
+{ id: 99, name: "Documentary" },
+{ id: 18, name: "Drama" },
+{ id: 10751, name: "Family" },
+{ id: 14, name: "Fantasy" },
+{ id: 36, name: "History" },
+{ id: 27, name: "Horror" },
+{ id: 10402, name: "Music" },
+{ id: 9648, name: "Mystery" },
+{ id: 10749, name: "Romance" },
+{ id: 878, name: "Science Fiction" },
+{ id: 10770, name: "TV Movie" },
+{ id: 53, name: "Thriller" },
+{ id: 10752, name: "War" },
+{ id: 37, name: "Western" },
+];
+
+
 // Function to open the dialog for a specific movie
 function openDialog(movieId) {
+
     const magnet = document.getElementById("magnet-" + movieId).value;
     let details = JSON.parse(document.querySelector('#movieDetails-' + movieId).value);
-    console.log(details);
 
     const aMagnet = document.getElementById("magnet");
-    // const title = document.querySelector('.modalBannerTitle');
-    // const director = document.querySelector('.modalBannerDesc');
+    const title = document.querySelector('.modalBannerTitle');
+    const director = document.querySelector('.modalBannerDesc');
+    const overview = document.querySelector('.modalDescription');
+    const rating = document.querySelector('.modalRating');
+    const release = document.querySelector('.modalReleaseDate');
+    const budget = document.querySelector('.modalBudget');
+    const genreContainer = document.querySelector('.modalGenreContainer');
+
+
+    // SHOW THE GENRE OF THE MOVIE
+    details.genre_ids.forEach((individualGenreId) => {
+        let genreObj = genreId.find((genre) => genre.id === individualGenreId);
+
+        if (genreObj) {
+            let modalGenreDiv = document.createElement("div");
+            modalGenreDiv.classList.add("modalGenre");
+            let modalGenreNameParagraph = document.createElement("p");
+            modalGenreNameParagraph.classList.add("modalGenreName");
+            
+            modalGenreNameParagraph.textContent = genreObj.name ;
+    
+            modalGenreDiv.appendChild(modalGenreNameParagraph);
+    
+            // Append the modalGenre div to the parent element
+            genreContainer.appendChild(modalGenreDiv);
+        }
+    })
+
+    director.textContent = details.director;
+    title.textContent = details.title;
+    overview.textContent = details.overview;
+    rating.textContent = details.adult.value === false ? "PG" : "18+";
+    release.textContent = details.release_date;
+    budget.textContent = details.budget;
 
 
     aMagnet.href = magnet;

@@ -27,6 +27,7 @@ $tmdb = new TMDB();
 $movies = $tmdb->getTopRatedMovies();
     foreach($movies as $movie){
         echo '<form action="" method="post">';
+        // echo '<input class="directorName" type="hidden" value="'. $movie->getDirectorNames() .'"/>';
         echo '<input  id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?magnet=' /** urlencode($this->search($movie->getTitle())) **/) . '" />';
         echo '<input  id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
         echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';
@@ -61,26 +62,7 @@ $movies = $tmdb->getTopRatedMovies();
             </div>
             <div class="modalBannerGenreBtn">
                 <div class="modalGenreContainer">
-                    <div class="modalGenre">
-                        <p class="modalGenreName">
-                            Fantasy
-                        </p>
-                    </div>
-                    <div class="modalGenre">
-                        <p class="modalGenreName">
-                            Action
-                        </p>
-                    </div>
-                    <div class="modalGenre">
-                        <p class="modalGenreName">
-                            Adventure
-                        </p>
-                    </div>
-                    <div class="modalGenre">
-                        <p class="modalGenreName">
-                            Family
-                        </p>
-                    </div>
+                    <!-- GENRE IINJECTED BY THE JAVASCRIPT SCRIPT -->
                 </div>
                 <div class="modalBannerBtn">
                     <button class='modalLikeBtn'>
@@ -91,19 +73,19 @@ $movies = $tmdb->getTopRatedMovies();
             
             <div class="modalCardContainer">
                 <a id="magnet"><svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#ffffff" d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg></a>
-                <div class="modalRating modalCard">
+                <div class=" modalCard">
                     <p class="modalCardTitle">rating</p>
                     <p class="modalRating modalCardContent"></p>
                 </div>
-                <div class="modalRelease modalCard">
+                <div class=" modalCard">
                     <p class="modalCardTitle">release</p>
                     <p class="modalReleaseDate modalCardContent"></p>
                 </div>
-                <div class="modalBudget modalCard">
+                <div class=" modalCard">
                     <p class="modalCardTitle">budget</p>
                     <p class="modalBudget modalCardContent"></p>
                 </div>
-                <div class="modalLength modalCard">
+                <div class=" modalCard">
                     <p class="modalCardTitle">length</p>
                     <p class="modalLength modalCardContent"></p>
                 </div>
