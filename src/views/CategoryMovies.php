@@ -27,8 +27,8 @@ $tmdb = new TMDB();
 $movies = $tmdb->getTopRatedMovies();
     foreach($movies as $movie){
         echo '<form action="" method="post">';
-        echo '<input hidden id="magnet-' . $movie->getID() . '" type="text" value="' . htmlspecialchars('/download?magnet=' . urlencode($this->search($movie->getTitle()))) . '" />';
-        echo '<input hidden id="movieDetails-' . $movie->getID() . '" type="text" value="\'' . htmlspecialchars($movie->getJSON(), ENT_QUOTES, 'UTF-8') . '\'">';
+        echo '<input  id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?magnet=' /** urlencode($this->search($movie->getTitle())) **/) . '" />';
+        echo '<input  id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . $movie->getJSON() . '">';
         echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';
         echo '<div class="verticalCardImage" style="background-image: url(\'https://image.tmdb.org/t/p/w780/' . basename($movie->getPoster()) . '\');"></div>';
         echo '<h3 class="verticalCardTitle">' . $movie->getTitle() . '</h3>';

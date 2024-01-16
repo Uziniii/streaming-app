@@ -54,7 +54,6 @@ showButtons.forEach(element => {
     element.addEventListener("click", () => {
         // Get the movie ID or other identifier from the clicked card
         const movieId = element.dataset.movieId;
-        console.log('test');
         // Open the dialog for the specific movie
         body.classList.add('modalScroll');
         openDialog(movieId);
@@ -70,48 +69,26 @@ function modalNoScroll () { //AVOIDS SCROLING WHEN THE MODAL IS OPENED
 
 modalNoScroll();
 
-// Add a click event listener to the "Close" button
 closeButton.addEventListener("click", () => {
-    console.log('test');
     body.classList.remove('modalScroll');
     dialog.close();
 });
 
 // Function to open the dialog for a specific movie
 function openDialog(movieId) {
-    // Customize this part based on how you retrieve movie details
-    // For now, it just shows the movie ID in the dialog
-
-    // Assuming you have a hidden input for movie details
     const magnet = document.getElementById("magnet-" + movieId).value;
-    const movieDetailsJson = document.getElementById("movieDetails-" + movieId).value;
-    const movieDetails = JSON.parse(movieDetailsJson);
+    let details = JSON.parse(document.querySelector('#movieDetails-' + movieId).value);
+    console.log(details);
 
-    // Update modal title and release date
     const aMagnet = document.getElementById("magnet");
-    const modalTitle = document.querySelector(".modalBannerTitle");
-    const modalBannerDesc = document.querySelector(".modalBannerDesc")
-    const modalBackdrop = document.querySelector('.modalBackdrop');
-
-    const modalDescription = document.querySelector('.modalDescription');
-
-    const modalReleaseDate = document.querySelector(".modalReleaseDate");
-    const modalLength = document.querySelector('.modalLength');
-    const modalBudget = document.querySelector('.modalBudget');
-    const modalRating = document.querySelector('.modalRating');
-
-    modalTitle.textContent = movieDetails.title;
-    modalReleaseDate.textContent = movieDetails.releaseDate;
-    modalBannerDesc.textContent = movieDetails.director;
-    modalBudget.textContent = movieDetails.budget;
-    modalLength.textContent = movieDetails.runtime;
-    modalRating.textContent = movieDetails.adult;
-    modalDescription.textContent = movieDetails.overview;
+    // const title = document.querySelector('.modalBannerTitle');
+    // const director = document.querySelector('.modalBannerDesc');
 
 
     aMagnet.href = magnet;
 
     dialog.showModal();
+
 }
 
 // Function to close the modal by ID
