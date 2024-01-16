@@ -48,7 +48,7 @@
 
         <nav class="nav">
             <ul>
-                <a href="">
+                <a href="/profiles/switch">
                     <li class="first">
                         <i class="fa-solid fa-user-group"></i>
                         Switch Profile

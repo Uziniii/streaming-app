@@ -46,6 +46,12 @@ class ProfilesController
         header('Location: /homepage');
     }
 
+    public function switchProfiles() {
+        session_unset();
+
+        header('Location: /profiles');
+    }
+
     public function showCreateProfileForm() {
         // Méthode pour afficher le formulaire de création de profil
     }

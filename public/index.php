@@ -16,15 +16,11 @@ $router->get('/', 'IndexController@index');
 $router->get('/homepage', 'MovieController@showHomepage');
 $router->get('/profiles/select/:profile_id', 'ProfilesController@selectProfile');
 $router->get('/profiles', 'ProfilesController@showProfiles');
+$router->get('/profiles/switch', 'ProfilesController@switchProfiles');
 $router->get('/profiles/add', 'ProfilesController@showAddProfile');
 $router->get('/movies', 'MovieController@showHomepage');
 $router->get('/searchmovie', 'SearchController@showSearch');
-
-
-
-
 $router->get('/movies/download', 'MovieController@download');
-
 
 // Execute the router
 $router->run();

@@ -72,7 +72,7 @@ class MovieController
     {
         // Convert the movie details to a JSON string
         $movieDetailsJson = json_encode($movie);
-        echo '<input hidden id="magnet-' . $movie['id'] . '" type="text" value="' . htmlspecialchars('/download?magnet=' . urlencode($this->search($movie['title']))) . '" />';
+        echo '<input hidden id="magnet-' . $movie['id'] . '" type="text" value="' . htmlspecialchars('/download?magnet=' /** . urlencode($this->search($movie['title'])) **/) .  '" />';
         echo '<input hidden id="movieDetails-' . $movie['id'] . '" type="text" value=\'' . htmlspecialchars($movieDetailsJson, ENT_QUOTES, 'UTF-8') . '\' />';
         echo '<article class="verticalCard" data-movie-id="' . $movie['id'] . '">';
         echo '<div class="verticalCardImage" style="background-image: url(\'https://image.tmdb.org/t/p/w780/' . basename($movie['posterPath']) . '\');"></div>';

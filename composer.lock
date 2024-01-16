@@ -4,49 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4d43411faece10642b477afe68fd420",
+    "content-hash": "7a7b5bd80199ac9ef2c51e62d63775a8",
     "packages": [
-        {
-            "name": "aldobarr/qbittorrent-php",
-            "version": "v0.2.0-alpha",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/aldobarr/qbittorrent-php.git",
-                "reference": "0cc581aa6b5d2089b19e3f624505628b14413380"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/aldobarr/qbittorrent-php/zipball/0cc581aa6b5d2089b19e3f624505628b14413380",
-                "reference": "0cc581aa6b5d2089b19e3f624505628b14413380",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^7.5",
-                "php": ">=8.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "AldoBarr\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "Aldo Barreras",
-                    "email": "aldo@barreras.dev"
-                }
-            ],
-            "description": "An unofficial PHP client for the qbittorrent WebUI API",
-            "support": {
-                "issues": "https://github.com/aldobarr/qbittorrent-php/issues",
-                "source": "https://github.com/aldobarr/qbittorrent-php/tree/v0.2.0-alpha"
-            },
-            "time": "2023-03-12T19:19:03+00:00"
-        },
         {
             "name": "daijie/aria2",
             "version": "v1.1",
@@ -1360,9 +1319,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "aldobarr/qbittorrent-php": 15
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

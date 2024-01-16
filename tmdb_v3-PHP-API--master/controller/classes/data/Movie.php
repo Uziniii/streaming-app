@@ -128,7 +128,7 @@ class Movie extends ApiBaseObject{
 	 * 	@return string
 	 */
 	public function getJSON() {
-		return json_encode($this->_data, JSON_PRETTY_PRINT);
+		return json_encode($this->_data);
 	}
 
 
