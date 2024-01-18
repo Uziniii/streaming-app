@@ -46,7 +46,6 @@ class Movie extends ApiBaseObject{
 		}
 		return $director_ids;
 	}
-
 	/** 
 	 * 	Get the Movie's trailers
 	 *

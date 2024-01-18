@@ -103,6 +103,8 @@ function openDialog(movieId) {
 
     const magnet = document.getElementById("magnet-" + movieId).value;
     let details = JSON.parse(document.querySelector('#movieDetails-' + movieId).value);
+    let directorName = document.querySelector('.directorName').value;
+    let cast = document.querySelector('.cast').value; 
 
     const aMagnet = document.getElementById("magnet");
     const title = document.querySelector('.modalBannerTitle');
@@ -112,7 +114,9 @@ function openDialog(movieId) {
     const release = document.querySelector('.modalReleaseDate');
     const budget = document.querySelector('.modalBudget');
     const genreContainer = document.querySelector('.modalGenreContainer');
+    const banner = document.querySelector('.modalBanner');
 
+    genreContainer.innerHTML = "";
 
     // SHOW THE GENRE OF THE MOVIE
     details.genre_ids.forEach((individualGenreId) => {
@@ -133,7 +137,8 @@ function openDialog(movieId) {
         }
     })
 
-    director.textContent = details.director;
+    director.textContent = directorName;
+    banner.style.backgroundImage = 'url(https://image.tmdb.org/t/p/original/' + details.backdrop_path + ')';
     title.textContent = details.title;
     overview.textContent = details.overview;
     rating.textContent = details.adult.value === false ? "PG" : "18+";

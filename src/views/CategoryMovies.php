@@ -24,10 +24,19 @@ $tmdb = new TMDB();
     <div class="verticalCardRow">
         <?php
 
-$movies = $tmdb->getTopRatedMovies();
+    $movies = $tmdb->getTopRatedMovies();
     foreach($movies as $movie){
+        $crew = $movie->getCrew();
+        $directorName = "";
+        foreach($crew as $person) {
+            if ($person->getJob() === 'Director') {
+                $directorName = $person->getName();
+                break;
+            }
+        }
         echo '<form action="" method="post">';
-        // echo '<input class="directorName" type="hidden" value="'. $movie->getDirectorNames() .'"/>';
+        echo '<input class="directorName" type="hidden" value="'. $directorName . '"/>';
+        echo '<input class="cast" type="hidden" value"' . $movie->getCast() . '"/>';
         echo '<input  id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?magnet=' /** urlencode($this->search($movie->getTitle())) **/) . '" />';
         echo '<input  id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
         echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';
@@ -66,7 +75,7 @@ $movies = $tmdb->getTopRatedMovies();
                 </div>
                 <div class="modalBannerBtn">
                     <button class='modalLikeBtn'>
-                        <div class="modalLikeBtnImg"></div>
+                            <i class="fa-regular fa-heart"></i>
                     </button>
                 </div>
             </div>
