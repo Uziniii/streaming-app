@@ -37,7 +37,7 @@ $tmdb = new TMDB();
         echo '<form action="" method="post">';
         echo '<input class="directorName" type="hidden" value="'. $directorName . '"/>';
         echo '<input class="cast" type="hidden" value"' . $movie->getCast() . '"/>';
-        echo '<input  id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?magnet=' /** urlencode($this->search($movie->getTitle())) **/) . '" />';
+        echo '<input  id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
         echo '<input  id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
         echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';
         echo '<div class="verticalCardImage" style="background-image: url(\'https://image.tmdb.org/t/p/w780/' . basename($movie->getPoster()) . '\');"></div>';

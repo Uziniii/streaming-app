@@ -20,7 +20,7 @@ $router->get('/profiles/switch', 'ProfilesController@switchProfiles');
 $router->get('/profiles/add', 'ProfilesController@showAddProfile');
 $router->get('/movies', 'MovieController@showHomepage');
 $router->get('/searchmovie', 'SearchController@showSearch');
-$router->get('/movies/download', 'MovieController@download');
+$router->get('/download', 'MovieController@download');
 
 // Execute the router
 $router->run();
