@@ -139,9 +139,9 @@ function openDialog(movieId) {
 
     // director.textContent = directorName;
     banner.style.backgroundImage = 'url(https://image.tmdb.org/t/p/original/' + details.backdrop_path + ')';
+    rating.textContent = details.adult ? "PG" : "18+";
     title.textContent = details.title;
     overview.textContent = details.overview;
-    rating.textContent = details.adult ? "18+" : "PG";
     release.textContent = details.release_date;
     budget.textContent = details.budget;
 
