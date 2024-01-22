@@ -26,17 +26,17 @@ $tmdb = new TMDB();
 
     $movies = $tmdb->getTopRatedMovies();
     foreach($movies as $movie){
-        $crew = $movie->getCrew();
-        $directorName = "";
-        foreach($crew as $person) {
-            if ($person->getJob() === 'Director') {
-                $directorName = $person->getName();
-                break;
-            }
-        }
+        // $crew = $movie->getCrew();
+        // $directorName = "";
+        // foreach($crew as $person) {
+        //     if ($person->getJob() === 'Director') {
+        //         $directorName = $person->getName();
+        //         break;
+        //     }
+        // }
         echo '<form action="" method="post">';
-        echo '<input class="directorName" type="hidden" value="'. $directorName . '"/>';
-        echo '<input class="cast" type="hidden" value"' . $movie->getCast() . '"/>';
+        // echo '<input class="directorName" type="hidden" value="'. $directorName . '"/>';
+        // echo '<input class="cast" type="hidden" value"' . $movie->getCast() . '"/>';
         echo '<input  id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
         echo '<input  id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
         echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';

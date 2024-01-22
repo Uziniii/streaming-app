@@ -103,12 +103,12 @@ function openDialog(movieId) {
 
     const magnet = document.getElementById("magnet-" + movieId).value;
     let details = JSON.parse(document.querySelector('#movieDetails-' + movieId).value);
-    let directorName = document.querySelector('.directorName').value;
-    let cast = document.querySelector('.cast').value; 
+    // let directorName = document.querySelector('.directorName').value;
+    // let cast = document.querySelector('.cast').value; 
 
     const aMagnet = document.getElementById("magnet");
     const title = document.querySelector('.modalBannerTitle');
-    const director = document.querySelector('.modalBannerDesc');
+    // const director = document.querySelector('.modalBannerDesc');
     const overview = document.querySelector('.modalDescription');
     const rating = document.querySelector('.modalRating');
     const release = document.querySelector('.modalReleaseDate');
@@ -137,11 +137,11 @@ function openDialog(movieId) {
         }
     })
 
-    director.textContent = directorName;
+    // director.textContent = directorName;
     banner.style.backgroundImage = 'url(https://image.tmdb.org/t/p/original/' + details.backdrop_path + ')';
     title.textContent = details.title;
     overview.textContent = details.overview;
-    rating.textContent = details.adult.value === false ? "PG" : "18+";
+    rating.textContent = details.adult ? "18+" : "PG";
     release.textContent = details.release_date;
     budget.textContent = details.budget;
 
