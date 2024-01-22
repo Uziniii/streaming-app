@@ -15,25 +15,38 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         // Récupérez la valeur du champ search_query
         $searchQuery = $_GET['search_query'];
 
+        echo '<div class="resultCard">';
         echo ' <div class="verticalCardRow"> ';
     
         foreach ($searchResults as $movie) {
             echo '<form action="" method="post">';
-        // echo '<input class="directorName" type="hidden" value="'. $directorName . '"/>';
-        // echo '<input class="cast" type="hidden" value"' . $movie->getCast() . '"/>';
-        echo '<input  id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
-        echo '<input  id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
-        echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';
-        echo '<div class="verticalCardImage" style="background-image: url(\'https://image.tmdb.org/t/p/w780/' . basename($movie->getPoster()) . '\');"></div>';
-        echo '<h3 class="verticalCardTitle">' . $movie->getTitle() . '</h3>';
-        echo '<div class="verticalCardDate">' . $movie->getReleaseDate() . '</div>';
-        echo '</article>';
-        echo '</form>';
-            // echo '          <li>'. $movie->getTitle() .' (<a href="https://www.themoviedb.org/movie/'. $movie->getID() .'">'. $movie->getID() .'</a>)</li>';
-            // echo '<div class="verticalCardImage" style="background-image: url(\'https://image.tmdb.org/t/p/w780/' . basename($movie->getPoster()) . '\');"></div>';
-            
+
+            $cast = $movie->getCast();
+            foreach ($cast as $index => $person) {
+                if ($index < 3) {
+                    echo '<input type="hidden" value="' . $person->getName() . '"/>';
+                    echo '<input type="hidden" value="' . $person->getImageURL('w185') . '"/>';
+                } else {
+                    break;
+                }
+            }
+            echo '<input  id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
+            echo '<input  id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
+            echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';
+            $posterPath = $movie->getPoster();
+            if (!empty($posterPath)) {
+                echo '<div class="verticalCardImage" style="background-image: url(\'https://image.tmdb.org/t/p/w780/' . basename($posterPath) . '\');"></div>';
+            } else {
+                // Provide a default image or placeholder if the poster path is empty
+                echo '<div class="verticalCardImage" style="background-image: url(\'../img/no_image_found_default.png\');"></div>';
+            }
+            echo '<h3 class="verticalCardTitle">' . $movie->getTitle() . '</h3>';
+            echo '<div class="verticalCardDate">' . $movie->getReleaseDate() . '</div>';
+            echo '</article>';
+            echo '</form>';
         }
     
+        echo '</div>';
         echo '</div>';
     } 
 }

@@ -99,11 +99,20 @@ header {
 .headerSearchBar::placeholder {
     color: white;
 }
-.headerSearchBarLogo {
+.searchBtn {
+    background-color: transparent;
+    outline: none;
+    border: none;
+
     width: 1.6rem;
     height: 1.6rem;
     cursor: pointer;
     margin: 0 1rem 0 0 ;
+
+}
+.fa-magnifying-glass {
+    font-size: 1.4rem;
+    color: white;
 }
 
 .headerActive {

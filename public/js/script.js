@@ -75,6 +75,8 @@ closeButton.addEventListener("click", () => {
 });
 
 
+
+
 const genreId = [  //ALL THE GENRE
 { id: 28, name: "Action" },
 { id: 12, name: "Adventure" },
@@ -103,8 +105,9 @@ function openDialog(movieId) {
 
     const magnet = document.getElementById("magnet-" + movieId).value;
     let details = JSON.parse(document.querySelector('#movieDetails-' + movieId).value);
+    const castName = document.querySelectorAll('.castName').value;
+    const castImage = document.querySelectorAll('.castImage').value;
     // let directorName = document.querySelector('.directorName').value;
-    // let cast = document.querySelector('.cast').value; 
 
     const aMagnet = document.getElementById("magnet");
     const title = document.querySelector('.modalBannerTitle');
@@ -115,6 +118,20 @@ function openDialog(movieId) {
     const budget = document.querySelector('.modalBudget');
     const genreContainer = document.querySelector('.modalGenreContainer');
     const banner = document.querySelector('.modalBanner');
+    const modalCastName = document.querySelectorAll('.modalCastName');
+    const modalCastImage = documetn.querySelectorAll('.modalCastImg');
+    
+    modalCastImage.forEach((image) => {
+        castImage.forEach((castImage) => {
+            image.style.backgroundImage = 'url('+ castImage +')';
+        })
+    })
+
+    modalCastName.forEach((name) => {
+        castName.forEach((castName) => {
+            name.textContent = castName;
+        })
+    })
 
     genreContainer.innerHTML = "";
 

@@ -96,20 +96,15 @@ main {
 .categoryTitleLogo {
     width: 2.2rem;
 }
-
-.verticalCardContainer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    margin: 0 auto;
-    color: white;
+.trendingCategory {
+    padding: 2rem 0;
 }
+
+
 .verticalCardRow {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 40px;
 }
 .verticalCard {
     display: flex;
@@ -126,7 +121,10 @@ main {
 .verticalCardTitle{
     white-space: nowrap;
   width: 100%;
-  overflow: hidden;
+  height: 2.4rem;
+  overflow-y: hidden;
+  overflow-x: visible;
+  overflow-inline:hidden;
   text-overflow: ellipsis;
 }
 .verticalCardImage {
@@ -145,16 +143,7 @@ main {
     display: flex;
     justify-content: center;
 }
-.downloadBtn {
-    width: 10rem;
-    height: 2rem;
-    background-color: green;
-    border-radius: 15px;
-    color: white;
-    border: none;
-    outline: none;
-    margin: 15rem;
-}
+
 footer {
     display: flex;
     flex-direction: column;
@@ -246,8 +235,10 @@ footer {
   @keyframes s3{ 
     100%{transform: rotate(1turn)}
   }
-  .verticalCardRow{
-    display: flex;
-    justify-content: space-between;
-  }
-  
+
+.resultCard {
+    width: 100%;
+    padding: 7vh 7vw;
+
+    margin : 10rem 0;
+}

@@ -26,7 +26,9 @@
                 <div class="headerSearchContainer">
                     <form action="/searchmovie" method="GET" class="headerSearchForm" id="headerSearchForm">
                         <input type="text" placeholder="Search a movie" maxLength="40" class="headerSearchBar" name="search_query" id="headerSearchBar">
-                        <button type="submit">Search</button>
+                        <button type="submit" class="searchBtn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
                     </form>
 
                 </div>

@@ -25,7 +25,7 @@ class SearchController
 
         if (isset($_GET['search_query'])) {
             $searchQuery = $_GET['search_query'];
-
+            
             // Effectuer la recherche avec $tmdb et obtenir les résultats
             $searchResults = $tmdb->searchMovie($searchQuery);
         }
