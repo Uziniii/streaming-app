@@ -57,18 +57,7 @@
                     <section class="modalCastContainer">
                         <h3 class="modalSectionTitle">Notable Cast</h3>
                         <div class="modalCastArticleContainer">
-                            <div class="modalCastArticle">
-                                <div class="modalCastImg"></div>
-                                <p class="modalCastName">Chris Pratt</p>
-                            </div>
-                            <div class="modalCastArticle">
-                                <div class="modalCastImg"></div>
-                                <p class="modalCastName">Chris Pratt</p>
-                            </div>
-                            <div class="modalCastArticle">
-                                <div class="modalCastImg"></div>
-                                <p class="modalCastName">Chris Pratt</p>
-                            </div>
+                            <!-- Injected cast using JS -->
                         </div>
                     </section>
                 </div>

@@ -24,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $cast = $movie->getCast();
             foreach ($cast as $index => $person) {
                 if ($index < 3) {
-                    echo '<input type="hidden" value="' . $person->getName() . '"/>';
-                    echo '<input type="hidden" value="' . $person->getImageURL('w185') . '"/>';
+                    echo '<input class="castName" type="hidden" value="' . $person->getName() . '"/>';
+                    echo '<input class="castImage" type="hidden" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '"/>';
                 } else {
                     break;
                 }

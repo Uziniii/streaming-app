@@ -21,16 +21,19 @@ $tmdb = new TMDB();
 
     $movies = $tmdb->getTopRatedMovies();
     foreach($movies as $movie){
+
+        
+
         $posterPath = $movie->getPoster();
         echo '<form action="" method="post">';
-        $cast = $movie->getCast();
-        foreach ($cast as $index => $person) {
-            if ($index < 3) {
-                echo '<input class="castName" type="hidden" value="' . $person->getName() . '"/>';
-                echo '<input class="castImage" type="hidden" value="' . $person->getImageURL('w185') . '"/>';
-            } else {
-                break;
-            }
+
+        $thisMovie = $tmdb->getMovie($movie->getID());
+        $cast = $thisMovie->getCast();
+
+        $castLimit = min(5, count($cast));
+        foreach (array_slice($cast, 0, $castLimit) as $index => $person) {
+                echo '<input type="hidden" class="castName" value="' . $person->getName() . '" />';
+                echo '<input type="hidden" class="castImage" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '" />';
         }
         echo '<input  id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
         echo '<input  id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
@@ -46,6 +49,8 @@ $tmdb = new TMDB();
         echo '<div class="verticalCardDate">' . $movie->getReleaseDate() . '</div>';
         echo '</article>';
         echo '</form>';
+
+        unset($thisMovie);
     }
 
         ?>
@@ -71,11 +76,12 @@ $tmdb = new TMDB();
     foreach($movies as $movie){
         
         echo '<form action="" method="post">';
-        $cast = $movie->getCast();
-        foreach ($cast as $index => $person) {
-            if ($index < 3) {
-                echo '<input type="hidden" value="' . $person->getName() . '"/>';
-                echo '<input type="hidden" value="' . $person->getImageURL('w185') . '"/>';
+        $thisMovie = $tmdb->getMovie($movie->getID());
+        $cast = $thisMovie->getCast();
+        foreach ($cast as $index=> $person) {
+            if ($index < 5) {
+                echo '<input type="hidden" class="castName" value="' . $person->getName() . '" />';
+                echo '<input type="hidden" class="castImage" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '" />';
             } else {
                 break;
             }
@@ -118,11 +124,12 @@ $tmdb = new TMDB();
     $movies = $tmdb->getPopularMovies();
     foreach($movies as $movie){
         echo '<form action="" method="post">';
-        $cast = $movie->getCast();
-        foreach ($cast as $index => $person) {
-            if ($index < 3) {
-                echo '<input type="hidden" value="' . $person->getName() . '"/>';
-                echo '<input type="hidden" value="' . $person->getImageURL('w185') . '"/>';
+        $thisMovie = $tmdb->getMovie($movie->getID());
+        $cast = $thisMovie->getCast();
+        foreach ($cast as $index=> $person) {
+            if ($index < 5) {
+                echo '<input type="hidden" class="castName" value="' . $person->getName() . '" />';
+                echo '<input type="hidden" class="castImage" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '" />';
             } else {
                 break;
             }
