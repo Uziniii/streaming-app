@@ -105,9 +105,10 @@ function openDialog(movieId) {
 
     const magnet = document.getElementById("magnet-" + movieId).value;
     let details = JSON.parse(document.querySelector('#movieDetails-' + movieId).value);
-    const castName = document.querySelectorAll('.castName').value;
-    const castImage = document.querySelectorAll('.castImage').value;
+    const castName = document.querySelectorAll('.castName');
+    const castImage = document.querySelectorAll('.castImage');
     // let directorName = document.querySelector('.directorName').value;
+
 
     const aMagnet = document.getElementById("magnet");
     const title = document.querySelector('.modalBannerTitle');
@@ -118,20 +119,31 @@ function openDialog(movieId) {
     const budget = document.querySelector('.modalBudget');
     const genreContainer = document.querySelector('.modalGenreContainer');
     const banner = document.querySelector('.modalBanner');
-    const modalCastName = document.querySelectorAll('.modalCastName');
-    const modalCastImage = documetn.querySelectorAll('.modalCastImg');
+    const modalCastContainer = document.querySelector('.modalCastArticleContainer');
     
-    modalCastImage.forEach((image) => {
-        castImage.forEach((castImage) => {
-            image.style.backgroundImage = 'url('+ castImage +')';
-        })
-    })
+    modalCastContainer.innerHTML = "";
 
-    modalCastName.forEach((name) => {
-        castName.forEach((castName) => {
-            name.textContent = castName;
-        })
-    })
+    castName.forEach((castName, index) => {
+        let image = castImage[index];
+
+        // Create elements for each cast member
+        let modalCastArticle = document.createElement("div");
+        modalCastArticle.classList.add("modalCastArticle");
+
+        let modalCastImg = document.createElement("div");
+        modalCastImg.classList.add("modalCastImg");
+        modalCastImg.style.backgroundImage = 'url("' + image.value + '")';
+
+        let modalCastName = document.createElement("p");    
+        modalCastName.classList.add("modalCastName");
+        modalCastName.textContent = castName.value;
+
+        modalCastArticle.appendChild(modalCastImg);
+        modalCastArticle.appendChild(modalCastName);
+
+        // Append the cast article to the container
+        modalCastContainer.appendChild(modalCastArticle);
+    });
 
     genreContainer.innerHTML = "";
 
