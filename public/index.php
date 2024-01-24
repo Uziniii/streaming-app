@@ -21,6 +21,7 @@ $router->get('/profiles/add', 'ProfilesController@showAddProfile');
 $router->get('/movies', 'MovieController@showHomepage');
 $router->get('/searchmovie', 'SearchController@showSearch');
 $router->get('/download', 'MovieController@download');
+$router->get('/play/', 'MovieController@playMovie');
 
 // Execute the router
 $router->run();

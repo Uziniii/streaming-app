@@ -143,7 +143,7 @@
     padding: 0 0 0 1rem;
 }
 
-#magnet{
+#magnet, #play {
     outline: none;
     border: none;
     border-radius: 25px;

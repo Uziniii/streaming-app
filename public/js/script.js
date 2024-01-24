@@ -47,8 +47,6 @@ const showButtons = document.querySelectorAll(".verticalCard");
 const dialog = document.querySelector("dialog");
 const closeButton = document.querySelector("dialog button");
 
-dialog.requestFullscreen();
-
 // Add a click event listener to each "Show" button
 showButtons.forEach(element => {
     element.addEventListener("click", () => {
@@ -110,7 +108,15 @@ function openDialog(movieId) {
     const directorName = document.querySelector('.directorName.movie-' + movieId);
 
 
+    const aPlay = document.getElementById("play");
     const aMagnet = document.getElementById("magnet");
+
+    if (details.id === 10378) {
+        aMagnet.style.display = "none";
+        aPlay.style.display = "flex";
+        aPlay.href = "/play/";
+    }
+
     const title = document.querySelector('.modalBannerTitle');
     const director = document.querySelector('.modalBannerDesc');
     const overview = document.querySelector('.modalDescription');
@@ -145,6 +151,10 @@ function openDialog(movieId) {
         modalCastContainer.appendChild(modalCastArticle);
     });
 
+    if (details.genre_ids === undefined) {
+        details.genre_ids = details.genres;
+    }
+
     genreContainer.innerHTML = "";
 
     // SHOW THE GENRE OF THE MOVIE
@@ -175,11 +185,9 @@ function openDialog(movieId) {
     release.textContent = details.release_date;
     budget.textContent = details.budget;
 
-
     aMagnet.href = magnet;
 
     dialog.showModal();
-
 }
 
 // Function to close the modal by ID

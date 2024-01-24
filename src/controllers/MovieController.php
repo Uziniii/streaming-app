@@ -111,7 +111,7 @@ class MovieController
         try {
             // Assuming you have a method in your MovieManager to get movie details by ID
             $movieDetails = $this->movieManager->getMovieById($movieId);
-          
+            var_dump($this->movieManager->getMovieById("10378"));
             return $movieDetails;
         } catch (Exception $e) {
             // Handle the exception or log the error
