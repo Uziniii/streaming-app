@@ -34,7 +34,7 @@
     background-size: cover;
 
     width : 100%;
-    height: 38rem;
+    height: 40rem;
     padding: 0px 7vw;
     
     box-shadow: 0px -22px 30px 12px rgba(5,21,30,1) inset;
@@ -115,8 +115,8 @@
 
     border-radius: 25px;
 
-    background-color: #434d4f35;
-    backdrop-filter: blur(2px);
+    background-color: #3e444635;
+    backdrop-filter: blur(10px);
 
     display: flex;
     align-items: center;
@@ -134,7 +134,7 @@
     text-transform: uppercase;
     writing-mode: vertical-rl;
     text-orientation: sideways-right;
-    color: #434d4f;
+    color: #585b5b;
     font-weight: bold;
     font-size: 0.9rem;
     text-align: center;
@@ -198,6 +198,7 @@
 
 .modalCastArticleContainer {
     display: flex; 
+    align-items: center;
     gap: 25px;
 }
 .modalCastArticle {
@@ -206,16 +207,28 @@
     justify-content: center;
     align-items: center;
     row-gap: 5px;
+
+    height: 9rem;
+    width: 7rem;
 }
 .modalCastImg {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
 
     border-radius: 50%;
-    background-color: blue;
+    background-size: cover;
+    background-color: transparent;
 }
 .modalCastName {
+    width: 100%;
+    height: 2.4rem;
+
     text-transform: capitalize;
+    overflow-y: hidden;
+    overflow-x: visible;
+    overflow-inline:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     color: white;
 }
 .modalHypeContainer {
