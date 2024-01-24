@@ -103,10 +103,8 @@ function openDialog(movieId) {
 
     const magnet = document.getElementById("magnet-" + movieId).value;
     let details = JSON.parse(document.querySelector('#movieDetails-' + movieId).value);
-    const castName = document.querySelectorAll('.castName.movie-' + movieId);
-    const castImage = document.querySelectorAll('.castImage.movie-' + movieId);
-    const directorName = document.querySelector('.directorName.movie-' + movieId);
-
+    // let directorName = document.querySelector('.directorName').value;
+    // let cast = document.querySelector('.cast').value; 
 
     const aPlay = document.getElementById("play");
     const aMagnet = document.getElementById("magnet");
@@ -125,35 +123,6 @@ function openDialog(movieId) {
     const budget = document.querySelector('.modalBudget');
     const genreContainer = document.querySelector('.modalGenreContainer');
     const banner = document.querySelector('.modalBanner');
-    const modalCastContainer = document.querySelector('.modalCastArticleContainer');
-    
-    modalCastContainer.innerHTML = "";
-
-    castName.forEach((castName, index) => {
-        let image = castImage[index];
-
-        // Create elements for each cast member
-        let modalCastArticle = document.createElement("div");
-        modalCastArticle.classList.add("modalCastArticle");
-
-        let modalCastImg = document.createElement("div");
-        modalCastImg.classList.add("modalCastImg");
-        modalCastImg.style.backgroundImage = 'url("' + image.value + '")';
-
-        let modalCastName = document.createElement("p");    
-        modalCastName.classList.add("modalCastName");
-        modalCastName.textContent = castName.value;
-
-        modalCastArticle.appendChild(modalCastImg);
-        modalCastArticle.appendChild(modalCastName);
-
-        // Append the cast article to the container
-        modalCastContainer.appendChild(modalCastArticle);
-    });
-
-    if (details.genre_ids === undefined) {
-        details.genre_ids = details.genres;
-    }
 
     genreContainer.innerHTML = "";
 
