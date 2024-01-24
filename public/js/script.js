@@ -124,6 +124,10 @@ function openDialog(movieId) {
     const genreContainer = document.querySelector('.modalGenreContainer');
     const banner = document.querySelector('.modalBanner');
 
+    if (details.genre_ids === undefined) {
+        details.genre_ids = details.genres;
+    }
+
     genreContainer.innerHTML = "";
 
     // SHOW THE GENRE OF THE MOVIE
