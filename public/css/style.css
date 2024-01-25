@@ -93,8 +93,10 @@ main {
 .categoryTitle {
     color: white;
 }
-.categoryTitleLogo {
+.trendingCategoryLogo {
     width: 2.2rem;
+    height: 2.2rem;
+    margin: 0 1.5rem 0 0 ;
 }
 .trendingCategory {
     padding: 2rem 0;

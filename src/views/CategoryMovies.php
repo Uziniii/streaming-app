@@ -65,6 +65,7 @@ $tmdb = new TMDB();
             echo '</form>';
 
             unset($thisMovie);
+            unset($castLimit);
         }
         include VIEWS . "MovieModal.php";
         ?>
@@ -75,26 +76,18 @@ $tmdb = new TMDB();
 
     <div class="trendingCategory">
     <div class="categoryTitleContainer">
-        <img src="/img/icons8-flame-48.png" alt="" class="trendingCategoryLogo categoryLogo">
+        <img src="/img/star_icon.png" alt="" class="trendingCategoryLogo categoryLogo">
         <h2 class="trendingCategoryTitle categoryTitle">
-            GOAT
+            POPULAR
         </h2>
     </div>
     <div class="verticalCardRow">
-        <form action="" method="post">
-            <input id="magnet-10378" type="hidden" value="/download?name=">
-            <input id="movieDetails-10378" type="hidden" value="<?= htmlspecialchars($tmdb->getMovie(10378)->getJSON()) ?>">
-            <article class="verticalCard" data-movie-id="10378">
-                <div class="verticalCardImage" style="background-image: url('https://image.tmdb.org/t/p/w780/i9jJzvoXET4D9pOkoEwncSdNNER.jpg');"></div>
-                <h3 class="verticalCardTitle">Big Buck Bunny</h3>
-                <div class="verticalCardDate">2008-05-30</div>
-            </article>
-        </form>
         <?php
 
         $movies = $tmdb->getPopularMovies();
         foreach ($movies as $movie) {
             $thisMovie = $tmdb->getMovie($movie->getID());
+
             $cast = $thisMovie->getCast();
             $castLimit = min(5, count($cast));
 
@@ -114,6 +107,7 @@ $tmdb = new TMDB();
                 $director = $tmdb->getPerson($directorId);
                 echo '<input type="hidden" class="directorName movie-' . $movie->getID() . '" value="' . $director->getName() . '" />';
             }
+
             echo '<input id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
             echo '<input id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
             echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';
@@ -139,26 +133,19 @@ $tmdb = new TMDB();
 
     <div class="trendingCategory">
     <div class="categoryTitleContainer">
-        <img src="/img/icons8-flame-48.png" alt="" class="trendingCategoryLogo categoryLogo">
+        <img src="/img/ticket_icon.png" alt="" class="trendingCategoryLogo categoryLogo">
         <h2 class="trendingCategoryTitle categoryTitle">
-            GOAT
+            NOW IN THEATERS
         </h2>
     </div>
     <div class="verticalCardRow">
-        <form action="" method="post">
-            <input id="magnet-10378" type="hidden" value="/download?name=">
-            <input id="movieDetails-10378" type="hidden" value="<?= htmlspecialchars($tmdb->getMovie(10378)->getJSON()) ?>">
-            <article class="verticalCard" data-movie-id="10378">
-                <div class="verticalCardImage" style="background-image: url('https://image.tmdb.org/t/p/w780/i9jJzvoXET4D9pOkoEwncSdNNER.jpg');"></div>
-                <h3 class="verticalCardTitle">Big Buck Bunny</h3>
-                <div class="verticalCardDate">2008-05-30</div>
-            </article>
-        </form>
         <?php
 
         $movies = $tmdb->getNowPlayingMovies();
+
         foreach ($movies as $movie) {
             $thisMovie = $tmdb->getMovie($movie->getID());
+
             $cast = $thisMovie->getCast();
             $castLimit = min(5, count($cast));
 
@@ -178,6 +165,7 @@ $tmdb = new TMDB();
                 $director = $tmdb->getPerson($directorId);
                 echo '<input type="hidden" class="directorName movie-' . $movie->getID() . '" value="' . $director->getName() . '" />';
             }
+
             echo '<input id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
             echo '<input id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
             echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';

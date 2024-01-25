@@ -34,7 +34,7 @@
     background-size: cover;
 
     width : 100%;
-    height: 40rem;
+    height: 42rem;
     padding: 0px 7vw;
     
     box-shadow: 0px -22px 30px 12px rgba(5,21,30,1) inset;
@@ -54,6 +54,7 @@
     color: white;
     font-size: 4.5rem;
     font-family: "Pathway Gothic One", sans-serif;
+    text-transform: uppercase;
 }
 
 
@@ -90,7 +91,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 2.5rem;
+    height: 3rem;
     width: 4rem;
 
     background-color: white;
@@ -98,9 +99,6 @@
     border: none;
     border-radius: 15px;
     outline: none;
-}
-.fa-heart {
-    font-size: 2rem;
 }
 
 .modalCardContainer {
@@ -217,6 +215,7 @@
 
     border-radius: 50%;
     background-size: cover;
+    background-position: center center;
     background-color: transparent;
 }
 .modalCastName {
@@ -238,3 +237,120 @@
     height: 100%;
   overflow: hidden;
 }
+
+svg{
+    cursor:pointer; overflow:visible; width:60px;
+    #heart{transform-origin:center; animation:animateHeartOut .3s linear forwards;}
+    #main-circ{transform-origin:29.5px 29.5px;}
+  }
+  
+  #checkbox{display:none;}
+  
+  #checkbox:checked + label svg{
+      #heart{transform:scale(.2); fill:#E2264D; animation:animateHeart .3s linear forwards .25s;}
+      #main-circ{transition:all 2s; animation:animateCircle .3s linear forwards; opacity:1;}
+      #grp1{
+        opacity:1; transition:.1s all .3s;
+        #oval1{
+          transform:scale(0) translate(0, -30px);
+          transform-origin:0 0 0;
+          transition:.5s transform .3s;}
+        #oval2{
+          transform:scale(0) translate(10px, -50px);
+          transform-origin:0 0 0;
+          transition:1.5s transform .3s;}
+      }
+      #grp2{
+        opacity:1; transition:.1s all .3s;
+        #oval1{
+          transform:scale(0) translate(30px, -15px); 
+          transform-origin:0 0 0;
+          transition:.5s transform .3s;}
+        #oval2{
+          transform:scale(0) translate(60px, -15px); 
+          transform-origin:0 0 0;
+          transition:1.5s transform .3s;}
+      }
+      #grp3{
+        opacity:1; transition:.1s all .3s;
+        #oval1{
+          transform:scale(0) translate(30px, 0px);
+          transform-origin:0 0 0;
+          transition:.5s transform .3s;}
+        #oval2{
+          transform:scale(0) translate(60px, 10px);
+          transform-origin:0 0 0;
+          transition:1.5s transform .3s;}
+      }
+      #grp4{
+        opacity:1; transition:.1s all .3s;
+        #oval1{
+          transform:scale(0) translate(30px, 15px);
+          transform-origin:0 0 0;
+          transition:.5s transform .3s;}
+        #oval2{
+          transform:scale(0) translate(40px, 50px);
+          transform-origin:0 0 0;
+          transition:1.5s transform .3s;}
+      }
+      #grp5{
+        opacity:1; transition:.1s all .3s;
+        #oval1{
+          transform:scale(0) translate(-10px, 20px);
+          transform-origin:0 0 0;
+          transition:.5s transform .3s;}
+        #oval2{
+          transform:scale(0) translate(-60px, 30px);
+          transform-origin:0 0 0;
+          transition:1.5s transform .3s;}
+      }
+      #grp6{
+        opacity:1; transition:.1s all .3s;
+        #oval1{
+          transform:scale(0) translate(-30px, 0px);
+          transform-origin:0 0 0;
+          transition:.5s transform .3s;}
+        #oval2{
+          transform:scale(0) translate(-60px, -5px);
+          transform-origin:0 0 0;
+          transition:1.5s transform .3s;}
+      }
+      #grp7{
+        opacity:1; transition:.1s all .3s;
+        #oval1{
+          transform:scale(0) translate(-30px, -15px);
+          transform-origin:0 0 0;
+          transition:.5s transform .3s;}
+        #oval2{
+          transform:scale(0) translate(-55px, -30px);
+          transform-origin:0 0 0;
+          transition:1.5s transform .3s;}
+      }
+      #grp2{opacity:1; transition:.1s opacity .3s;}
+      #grp3{opacity:1; transition:.1s opacity .3s;}
+      #grp4{opacity:1; transition:.1s opacity .3s;}
+      #grp5{opacity:1; transition:.1s opacity .3s;}
+      #grp6{opacity:1; transition:.1s opacity .3s;}
+      #grp7{opacity:1; transition:.1s opacity .3s;}
+  }
+  
+  @keyframes animateCircle{
+    40%{transform:scale(10); opacity:1; fill:#DD4688;}
+    55%{transform:scale(11); opacity:1; fill:#D46ABF;}
+    65%{transform:scale(12); opacity:1; fill:#CC8EF5;}
+    75%{transform:scale(13); opacity:1; fill:transparent; stroke:#CC8EF5; stroke-width:.5;}
+    85%{transform:scale(17); opacity:1; fill:transparent; stroke:#CC8EF5; stroke-width:.2;}
+    95%{transform:scale(18); opacity:1; fill:transparent; stroke:#CC8EF5; stroke-width:.1;}
+    100%{transform:scale(19); opacity:1; fill:transparent; stroke:#CC8EF5; stroke-width:0;}
+  }
+  
+  @keyframes animateHeart{
+    0%{transform:scale(.2);}
+    40%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+  }
+  
+  @keyframes animateHeartOut{
+    0%{transform:scale(1.4);}
+    100%{transform:scale(1);}
+  }

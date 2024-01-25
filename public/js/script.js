@@ -114,6 +114,8 @@ function openDialog(movieId) {
         aMagnet.style.display = "none";
         aPlay.style.display = "flex";
         aPlay.href = "/play/";
+    } else {
+        aMagnet.href = magnet;
     }
 
     const title = document.querySelector('.modalBannerTitle');
@@ -128,17 +130,21 @@ function openDialog(movieId) {
 
 
     modalCastContainer.innerHTML = "";
+
     castName.forEach((castName, index) => {
         let image = castImage[index];
         // Create elements for each cast member
         let modalCastArticle = document.createElement("div");
         modalCastArticle.classList.add("modalCastArticle");
+
         let modalCastImg = document.createElement("div");
         modalCastImg.classList.add("modalCastImg");
+
         modalCastImg.style.backgroundImage = 'url("' + image.value + '")';
         let modalCastName = document.createElement("p");    
         modalCastName.classList.add("modalCastName");
         modalCastName.textContent = castName.value;
+
         modalCastArticle.appendChild(modalCastImg);
         modalCastArticle.appendChild(modalCastName);
         // Append the cast article to the container
@@ -175,7 +181,7 @@ function openDialog(movieId) {
     release.textContent = details.release_date;
     budget.textContent = details.budget;
 
-    aMagnet.href = magnet;
+    
 
     dialog.showModal();
 }
