@@ -103,9 +103,15 @@ function openDialog(movieId) {
 
     const magnet = document.getElementById("magnet-" + movieId).value;
     let details = JSON.parse(document.querySelector('#movieDetails-' + movieId).value);
+
     const castName = document.querySelectorAll('.castName.movie-' + movieId);
     const castImage = document.querySelectorAll('.castImage.movie-' + movieId);
+
     const directorName = document.querySelector('.directorName.movie-' + movieId);
+
+    const budget = document.querySelector('.budget.movie-' + movieId).value;
+    const length = document.querySelector('.runtime.movie-' + movieId).value;
+    const adult = document.querySelector('.adult.movie-' + movieId).value;
 
     const aPlay = document.getElementById("play");
     const aMagnet = document.getElementById("magnet");
@@ -121,34 +127,41 @@ function openDialog(movieId) {
     const title = document.querySelector('.modalBannerTitle');
     const director = document.querySelector('.modalBannerDesc');
     const overview = document.querySelector('.modalDescription');
-    const rating = document.querySelector('.modalRating');
     const release = document.querySelector('.modalReleaseDate');
-    const budget = document.querySelector('.modalBudget');
     const genreContainer = document.querySelector('.modalGenreContainer');
     const banner = document.querySelector('.modalBanner');
+
     const modalCastContainer = document.querySelector('.modalCastArticleContainer');
+
+    const modalLength = document.querySelector('.modalLength');
+    const modalBudget = document.querySelector('.modalBudget');
+
+    const rating = document.querySelector('.modalRating');
 
 
     modalCastContainer.innerHTML = "";
 
     castName.forEach((castName, index) => {
-        let image = castImage[index];
-        // Create elements for each cast member
-        let modalCastArticle = document.createElement("div");
-        modalCastArticle.classList.add("modalCastArticle");
-
-        let modalCastImg = document.createElement("div");
-        modalCastImg.classList.add("modalCastImg");
-
-        modalCastImg.style.backgroundImage = 'url("' + image.value + '")';
-        let modalCastName = document.createElement("p");    
-        modalCastName.classList.add("modalCastName");
-        modalCastName.textContent = castName.value;
-
-        modalCastArticle.appendChild(modalCastImg);
-        modalCastArticle.appendChild(modalCastName);
-        // Append the cast article to the container
-        modalCastContainer.appendChild(modalCastArticle);
+        if (index < 5) {
+            let image = castImage[index];
+            // Create elements for each cast member
+            let modalCastArticle = document.createElement("div");
+            modalCastArticle.classList.add("modalCastArticle");
+    
+            let modalCastImg = document.createElement("div");
+            modalCastImg.classList.add("modalCastImg");
+    
+            modalCastImg.style.backgroundImage = 'url("' + image.value + '")';
+            let modalCastName = document.createElement("p");    
+            modalCastName.classList.add("modalCastName");
+            modalCastName.textContent = castName.value;
+    
+            modalCastArticle.appendChild(modalCastImg);
+            modalCastArticle.appendChild(modalCastName);
+            // Append the cast article to the container
+            modalCastContainer.appendChild(modalCastArticle);
+        }
+        
     });
 
     genreContainer.innerHTML = "";
@@ -175,11 +188,12 @@ function openDialog(movieId) {
 
     director.textContent = directorName.value;
     banner.style.backgroundImage = 'url(https://image.tmdb.org/t/p/original/' + details.backdrop_path + ')';
-    rating.textContent = details.adult ? "PG" : "18+";
+    rating.textContent = adult ? "PG" : "18+";
     title.textContent = details.title;
     overview.textContent = details.overview;
     release.textContent = details.release_date;
-    budget.textContent = details.budget;
+    modalBudget.innerHTML =  budget + '$';
+    modalLength.innerHTML = length + 'mins';
 
     
 

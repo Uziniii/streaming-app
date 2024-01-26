@@ -32,7 +32,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
             foreach (array_slice($cast, 0, $castLimit) as $index => $person) {
                     echo '<input type="hidden" class="castName movie-' . $movie->getID() . '" value="' . $person->getName() . '" />';
-                    echo '<input type="hidden" class="castImage movie-' . $movie->getID() . '" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '" />';
+                    if (!empty($person->getProfile())) {
+                        echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '" />';
+                    } else {
+                        echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="\'../img/default_cast.png\'" />';
+                    }
             }
 
             foreach (array_slice($directorId, 0, $directorLimit) as $index => $directorId) {

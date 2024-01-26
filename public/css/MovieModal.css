@@ -34,7 +34,7 @@
     background-size: cover;
 
     width : 100%;
-    height: 42rem;
+    height: 38rem;
     padding: 0px 7vw;
     
     box-shadow: 0px -22px 30px 12px rgba(5,21,30,1) inset;
@@ -52,7 +52,7 @@
 }
 .modalBannerTitle {
     color: white;
-    font-size: 4.5rem;
+    font-size: 4.3rem;
     font-family: "Pathway Gothic One", sans-serif;
     text-transform: uppercase;
 }
@@ -109,7 +109,7 @@
 }
 .modalCard {
     width: 17vw;
-    height: 10vw;
+    height: 9vw;
 
     border-radius: 25px;
 
@@ -156,7 +156,7 @@
     align-items: center;
 
     width: 15vw;
-    height: 10vw;
+    height: 9vw;
 }
 
 #magnet svg {

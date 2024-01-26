@@ -27,6 +27,57 @@ class Movie extends ApiBaseObject{
 	}
 
 	/** 
+	 * 	Get the Movie's budget
+	 *
+	 * 	@return int
+	 */
+	public function getBudget() {
+		return $this->_data['budget'];
+	}
+
+	/** 
+	 * 	Get the Movie's runtime
+	 *
+	 * 	@return int
+	 */
+	public function getRuntime() {
+		return $this->_data['runtime'];
+	}
+
+	public function getCountryCode() {
+		return $this->_data['productions_countries']['iso_3166_1'];
+	}
+
+	/** 
+	 * 	Get if the Movie is adult 
+	 *
+	 * 	@return int
+	 */
+	public function getCertification($countryCode) {
+		$certification = ""; // Initialize certification variable
+	
+		// Movie certifications data (replace this with your actual data source)
+		$certifications = [
+			"AR" => "PG",
+			"AU" => "PG",
+			"BR" => ["12", "14 (Columbia)", "L (TV Globo)"],
+			"CA" => "", // Not specified
+			"FR" => "12",
+			"DE" => "12",
+			"GB" => ["PG", "12 (2020 re-release)", "PG (releases on various dates)"],
+			"US" => "PG-13",
+		];
+	
+		if (array_key_exists($countryCode, $certifications)) {
+			$certification = $certifications[$countryCode];
+		}
+	
+		return $certification;
+	}
+
+	
+
+	/** 
 	 * 	Get the Movie Directors IDs
 	 *
 	 * 	@return array(int)
