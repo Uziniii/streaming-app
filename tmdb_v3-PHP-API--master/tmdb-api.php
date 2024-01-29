@@ -797,6 +797,15 @@ class TMDB {
 	}
 
 	/**
+	 * 	Get Certifications
+	 *
+	 * 	@return array
+	 */
+	public function getCertifications() {
+		return $this->_call('certifications');
+	}
+
+	/**
 	 * 	Get Jobs
 	 *
 	 * 	@return array

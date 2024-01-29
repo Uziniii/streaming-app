@@ -59,7 +59,7 @@ $tmdb = new TMDB();
                 echo '<input type="hidden" class="directorName movie-' . $movie->getID() . '" value="' . $director->getName() . '" />';
             }
             echo '<input class="budget movie-'. $thisMovie->getID() .'" type="hidden" value="'. $budget .'"/>';
-            echo '<input class="adult movie-'. $thisMovie->getID() .'" type="hidden" value="'. $certification .'"/>';
+            echo '<input class="certification movie-'. $thisMovie->getID() .'" type="hidden" value="'. $certification .'"/>';
             echo '<input class="runtime movie-'. $thisMovie->getID() .'" type="hidden" value="'. $runtime .'"/>';
             echo '<input id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
             echo '<input id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
@@ -97,12 +97,15 @@ $tmdb = new TMDB();
         $movies = $tmdb->getPopularMovies();
         foreach ($movies as $movie) {
             $thisMovie = $tmdb->getMovie($movie->getID());
-
             $cast = $thisMovie->getCast();
             $castLimit = min(5, count($cast));
 
             $directorId = $thisMovie->getDirectorIds();
             $directorLimit = min(1, count($directorId));
+
+            $certification = $thisMovie->getCertification($thisMovie->getCountryCode());
+            $budget = number_format($thisMovie->getBudget());
+            $runtime = number_format($thisMovie->getRuntime());
 
             $posterPath = $movie->getPoster();
 
@@ -121,7 +124,9 @@ $tmdb = new TMDB();
                 $director = $tmdb->getPerson($directorId);
                 echo '<input type="hidden" class="directorName movie-' . $movie->getID() . '" value="' . $director->getName() . '" />';
             }
-
+            echo '<input class="budget movie-'. $thisMovie->getID() .'" type="hidden" value="'. $budget .'"/>';
+            echo '<input class="adult movie-'. $thisMovie->getID() .'" type="hidden" value="'. $certification .'"/>';
+            echo '<input class="runtime movie-'. $thisMovie->getID() .'" type="hidden" value="'. $runtime .'"/>';
             echo '<input id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
             echo '<input id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
             echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';
@@ -135,7 +140,7 @@ $tmdb = new TMDB();
             echo '<div class="verticalCardDate">' . $movie->getReleaseDate() . '</div>';
             echo '</article>';
             echo '</form>';
-                
+
             unset($thisMovie);
         }
         include VIEWS . "MovieModal.php";
@@ -159,21 +164,24 @@ $tmdb = new TMDB();
 
         foreach ($movies as $movie) {
             $thisMovie = $tmdb->getMovie($movie->getID());
-
             $cast = $thisMovie->getCast();
             $castLimit = min(5, count($cast));
 
             $directorId = $thisMovie->getDirectorIds();
             $directorLimit = min(1, count($directorId));
 
+            $certification = $thisMovie->getCertification($thisMovie->getCountryCode());
+            $budget = number_format($thisMovie->getBudget());
+            $runtime = number_format($thisMovie->getRuntime());
+
             $posterPath = $movie->getPoster();
 
             echo '<form action="" method="post">';
 
             foreach (array_slice($cast, 0, $castLimit) as $index => $person) {
-                echo '<input type="hidden" class="castName movie-' . $thisMovie->getID() . '" value="' . $person->getName() . '" />';
+                echo '<input type="hidden" class="castName movie-' . $movie->getID() . '" value="' . $person->getName() . '" />';
                 if (!empty($person->getProfile())) {
-                echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '" />';
+                    echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '" />';
                 } else {
                     echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="\'../img/default_cast.png\'" />';
                 }
@@ -183,7 +191,9 @@ $tmdb = new TMDB();
                 $director = $tmdb->getPerson($directorId);
                 echo '<input type="hidden" class="directorName movie-' . $movie->getID() . '" value="' . $director->getName() . '" />';
             }
-
+            echo '<input class="budget movie-'. $thisMovie->getID() .'" type="hidden" value="'. $budget .'"/>';
+            echo '<input class="adult movie-'. $thisMovie->getID() .'" type="hidden" value="'. $certification .'"/>';
+            echo '<input class="runtime movie-'. $thisMovie->getID() .'" type="hidden" value="'. $runtime .'"/>';
             echo '<input id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
             echo '<input id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
             echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';
@@ -197,7 +207,7 @@ $tmdb = new TMDB();
             echo '<div class="verticalCardDate">' . $movie->getReleaseDate() . '</div>';
             echo '</article>';
             echo '</form>';
-                
+
             unset($thisMovie);
         }
         include VIEWS . "MovieModal.php";

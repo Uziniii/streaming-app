@@ -111,7 +111,7 @@ function openDialog(movieId) {
 
     const budget = document.querySelector('.budget.movie-' + movieId).value;
     const length = document.querySelector('.runtime.movie-' + movieId).value;
-    const adult = document.querySelector('.adult.movie-' + movieId).value;
+    const certification = document.querySelector('.certification.movie-' + movieId).value;
 
     const aPlay = document.getElementById("play");
     const aMagnet = document.getElementById("magnet");
@@ -188,7 +188,7 @@ function openDialog(movieId) {
 
     director.textContent = directorName.value;
     banner.style.backgroundImage = 'url(https://image.tmdb.org/t/p/original/' + details.backdrop_path + ')';
-    rating.textContent = adult ? "PG" : "18+";
+    rating.textContent = certification;
     title.textContent = details.title;
     overview.textContent = details.overview;
     release.textContent = details.release_date;

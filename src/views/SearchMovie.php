@@ -26,23 +26,30 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             $directorId = $thisMovie->getDirectorIds();
             $directorLimit = min(1, count($directorId));
 
+            $certification = $thisMovie->getCertification($thisMovie->getCountryCode());
+            $budget = number_format($thisMovie->getBudget());
+            $runtime = number_format($thisMovie->getRuntime());
+
             $posterPath = $movie->getPoster();
 
             echo '<form action="" method="post">';
 
             foreach (array_slice($cast, 0, $castLimit) as $index => $person) {
-                    echo '<input type="hidden" class="castName movie-' . $movie->getID() . '" value="' . $person->getName() . '" />';
-                    if (!empty($person->getProfile())) {
-                        echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '" />';
-                    } else {
-                        echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="\'../img/default_cast.png\'" />';
-                    }
+                echo '<input type="hidden" class="castName movie-' . $movie->getID() . '" value="' . $person->getName() . '" />';
+                if (!empty($person->getProfile())) {
+                    echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '" />';
+                } else {
+                    echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="\'../img/default_cast.png\'" />';
+                }
             }
 
             foreach (array_slice($directorId, 0, $directorLimit) as $index => $directorId) {
                 $director = $tmdb->getPerson($directorId);
                 echo '<input type="hidden" class="directorName movie-' . $movie->getID() . '" value="' . $director->getName() . '" />';
             }
+            echo '<input class="budget movie-'. $thisMovie->getID() .'" type="hidden" value="'. $budget .'"/>';
+            echo '<input class="adult movie-'. $thisMovie->getID() .'" type="hidden" value="'. $certification .'"/>';
+            echo '<input class="runtime movie-'. $thisMovie->getID() .'" type="hidden" value="'. $runtime .'"/>';
             echo '<input id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
             echo '<input id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
             echo '<article class="verticalCard" data-movie-id="' . $movie->getID() . '">';
@@ -56,8 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             echo '<div class="verticalCardDate">' . $movie->getReleaseDate() . '</div>';
             echo '</article>';
             echo '</form>';
-                
-            unset($thisMovie);
+
+            unset($thisMovie);  
         }
     
         echo '</div>';

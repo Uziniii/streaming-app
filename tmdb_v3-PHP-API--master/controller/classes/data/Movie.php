@@ -45,35 +45,37 @@ class Movie extends ApiBaseObject{
 	}
 
 	public function getCountryCode() {
-		return $this->_data['productions_countries']['iso_3166_1'];
+		$productionCountries =  $this->_data['production_countries'];
+
+		if (!empty($productionCountries) && is_array($productionCountries)) {
+			$firstCountry = reset($productionCountries); 
+			$countryCode = $firstCountry['iso_3166_1'];
+			return $countryCode;
+		} else {
+			return null;
+		}
 	}
 
 	/** 
-	 * 	Get if the Movie is adult 
+	 * 	Get the Movie's certifications 
 	 *
-	 * 	@return int
+	 * 	@return string
 	 */
-	public function getCertification($countryCode) {
-		$certification = ""; // Initialize certification variable
+	public function getCertification() {
 	
-		// Movie certifications data (replace this with your actual data source)
-		$certifications = [
-			"AR" => "PG",
-			"AU" => "PG",
-			"BR" => ["12", "14 (Columbia)", "L (TV Globo)"],
-			"CA" => "", // Not specified
-			"FR" => "12",
-			"DE" => "12",
-			"GB" => ["PG", "12 (2020 re-release)", "PG (releases on various dates)"],
-			"US" => "PG-13",
-		];
+		$certifications = $this->getCertifications();
 	
-		if (array_key_exists($countryCode, $certifications)) {
-			$certification = $certifications[$countryCode];
+		if (!is_array($certifications)) {
+			return "Certification data not available";
 		}
+	
+		$certification = "";
+	
+		$certification = $certifications["US"];
 	
 		return $certification;
 	}
+	
 
 	
 
