@@ -802,7 +802,12 @@ class TMDB {
 	 * 	@return array
 	 */
 	public function getCertifications() {
-		return $this->_call('certifications');
+		$certifications = array();
+		$result =  $this->_call('certification/movie/list');
+
+		foreach($result['US'] as $data) {
+			$certifications[] = $data;
+		}
 	}
 
 	/**

@@ -37,7 +37,8 @@ $tmdb = new TMDB();
             $directorId = $thisMovie->getDirectorIds();
             $directorLimit = min(1, count($directorId));
 
-            $certification = $thisMovie->getCertification($thisMovie->getCountryCode());
+            $certification = $thisMovie->getCertification();
+            
             $budget = number_format($thisMovie->getBudget());
             $runtime = number_format($thisMovie->getRuntime());
 

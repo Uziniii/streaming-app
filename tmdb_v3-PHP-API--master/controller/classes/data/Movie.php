@@ -65,10 +65,6 @@ class Movie extends ApiBaseObject{
 	
 		$certifications = $this->getCertifications();
 	
-		if (!is_array($certifications)) {
-			return "Certification data not available";
-		}
-	
 		$certification = "";
 	
 		$certification = $certifications["US"];
