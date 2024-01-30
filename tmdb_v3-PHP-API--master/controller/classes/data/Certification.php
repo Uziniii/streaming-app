@@ -17,7 +17,7 @@ class Certification {
     }
 
     public function getOrder() {
-        retunr $this->_data['order'];
+        return $this->_data['order'];
     }
 }
 
