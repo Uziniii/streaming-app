@@ -801,13 +801,25 @@ class TMDB {
 	 *
 	 * 	@return array
 	 */
-	public function getCertifications() {
-		$certifications = array();
-		$result =  $this->_call('certification/movie/list');
+	public function getCertifications($movieId) {
+		$certifications = "";
+		$countryCode ='US';
+		$result =  $this->_call('/movie/' . $movieId . '/release_dates');
 
-		foreach($result['US'] as $data) {
-			$certifications[] = $data;
+		foreach ($result['results'] as $response) {
+			if ($response['iso_3166_1'] === $countryCode) {
+				$certifications = $response['release_dates'];
+				if (!empty($certifications)) {
+					if (!empty($cerrtifications[0]['certification'])) {
+						$certifications = $certifications[0]['certification'];
+					} else if (empty($certifications[0]['certification'])) {
+						$certifications = $certifications[1]['certification'];
+					}
+				} 
+				break;
+			}
 		}
+		return $certifications;
 	}
 
 	/**

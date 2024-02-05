@@ -37,8 +37,8 @@ $tmdb = new TMDB();
             $directorId = $thisMovie->getDirectorIds();
             $directorLimit = min(1, count($directorId));
 
-            $certification = $thisMovie->getCertification();
-            
+            $certification = $tmdb->getCertifications($movie->getID());
+
             $budget = number_format($thisMovie->getBudget());
             $runtime = number_format($thisMovie->getRuntime());
 
@@ -51,7 +51,7 @@ $tmdb = new TMDB();
                 if (!empty($person->getProfile())) {
                     echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '" />';
                 } else {
-                    echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="\'../img/default_cast.png\'" />';
+                    echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="\'public\img\default_cast.png\'" />';
                 }
             }
 
@@ -104,7 +104,8 @@ $tmdb = new TMDB();
             $directorId = $thisMovie->getDirectorIds();
             $directorLimit = min(1, count($directorId));
 
-            $certification = $thisMovie->getCertification($thisMovie->getCountryCode());
+            $certification = $tmdb->getCertifications($movie->getID());
+
             $budget = number_format($thisMovie->getBudget());
             $runtime = number_format($thisMovie->getRuntime());
 
@@ -117,7 +118,7 @@ $tmdb = new TMDB();
                 if (!empty($person->getProfile())) {
                     echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '" />';
                 } else {
-                    echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="\'../img/default_cast.png\'" />';
+                    echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="\'public\img\default_cast.png\'" />';
                 }
             }
 
@@ -126,7 +127,7 @@ $tmdb = new TMDB();
                 echo '<input type="hidden" class="directorName movie-' . $movie->getID() . '" value="' . $director->getName() . '" />';
             }
             echo '<input class="budget movie-'. $thisMovie->getID() .'" type="hidden" value="'. $budget .'"/>';
-            echo '<input class="adult movie-'. $thisMovie->getID() .'" type="hidden" value="'. $certification .'"/>';
+            echo '<input class="certification movie-'. $thisMovie->getID() .'" type="hidden" value="'. $certification .'"/>';
             echo '<input class="runtime movie-'. $thisMovie->getID() .'" type="hidden" value="'. $runtime .'"/>';
             echo '<input id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
             echo '<input id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';
@@ -171,7 +172,8 @@ $tmdb = new TMDB();
             $directorId = $thisMovie->getDirectorIds();
             $directorLimit = min(1, count($directorId));
 
-            $certification = $thisMovie->getCertification($thisMovie->getCountryCode());
+            $certification = $tmdb->getCertifications($movie->getID());
+
             $budget = number_format($thisMovie->getBudget());
             $runtime = number_format($thisMovie->getRuntime());
 
@@ -184,7 +186,7 @@ $tmdb = new TMDB();
                 if (!empty($person->getProfile())) {
                     echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="' . $tmdb->getImageURL('w185') . $person->getProfile() . '" />';
                 } else {
-                    echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="\'../img/default_cast.png\'" />';
+                    echo '<input type="hidden" class="castImage movie-' . $thisMovie->getID() . '" value="\'public\img\default_cast.png\'" />';
                 }
             }
 
@@ -193,7 +195,7 @@ $tmdb = new TMDB();
                 echo '<input type="hidden" class="directorName movie-' . $movie->getID() . '" value="' . $director->getName() . '" />';
             }
             echo '<input class="budget movie-'. $thisMovie->getID() .'" type="hidden" value="'. $budget .'"/>';
-            echo '<input class="adult movie-'. $thisMovie->getID() .'" type="hidden" value="'. $certification .'"/>';
+            echo '<input class="certification movie-'. $thisMovie->getID() .'" type="hidden" value="'. $certification .'"/>';
             echo '<input class="runtime movie-'. $thisMovie->getID() .'" type="hidden" value="'. $runtime .'"/>';
             echo '<input id="magnet-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars('/download?name=' . $movie->getTitle()) . '" />';
             echo '<input id="movieDetails-' . $movie->getID() . '" type="hidden" value="' . htmlspecialchars($movie->getJSON()) . '">';

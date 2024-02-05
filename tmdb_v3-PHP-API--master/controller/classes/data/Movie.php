@@ -44,33 +44,15 @@ class Movie extends ApiBaseObject{
 		return $this->_data['runtime'];
 	}
 
-	public function getCountryCode() {
-		$productionCountries =  $this->_data['production_countries'];
-
-		if (!empty($productionCountries) && is_array($productionCountries)) {
-			$firstCountry = reset($productionCountries); 
-			$countryCode = $firstCountry['iso_3166_1'];
-			return $countryCode;
-		} else {
-			return null;
-		}
-	}
 
 	/** 
 	 * 	Get the Movie's certifications 
 	 *
 	 * 	@return string
-	 */
-	public function getCertification() {
-	
-		$certifications = $this->getCertifications();
-	
-		$certification = "";
-	
-		$certification = $certifications["US"];
-	
-		return $certification;
-	}
+	//  */
+	// public function getMovieCertification() {
+		
+	// }
 	
 
 	
